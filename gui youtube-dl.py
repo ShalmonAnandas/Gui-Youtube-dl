@@ -4,6 +4,8 @@ import os
 import tkinter as tk
 from tkinter import *
 
+
+
 #code to download clips
 def clip_dl():
     #input for links / starttime / endtime
@@ -29,14 +31,39 @@ def clip_dl():
 def mp3_dl():
     link = str(E1.get())
 
-    os.system('youtube-dl -v -x --audio-format best --audio-quality 0 ' + link)
+    os.system('youtube-dl -v -x --audio-format mp3 --audio-quality 2 ' + link)
 
-#code to download videos
-def video_dl():
+#code to download highest quality
+def max_dl():
     link = str(E1.get())
 
     os.system('youtube-dl -v -f bestvideo+bestaudio '+ link)
 
+#code to download 720p
+def hd_dl():
+    link = str(E1.get())
+
+    os.system('youtube-dl -v -f 22 '+ link)
+
+def video_dl():
+    hddl = (var1.get())
+    maxdl = (var2.get())
+    mp3dl = (var3.get())
+
+    if hddl == 1:
+        hd_dl()
+    else:
+        pass
+
+    if maxdl == 1:
+        max_dl()
+    else:
+        pass
+
+    if mp3dl == 1:
+        mp3_dl()
+    else:
+        pass
 
 #start of gui
 root = tk.Tk()
@@ -45,53 +72,73 @@ window_logo = PhotoImage(file = 'logo.png')
 root.iconphoto(False, window_logo)
 
 #heading
-canvas = tk.Canvas(root, height=100, width=490, bg="#d12424")
-Title = Label(canvas, text="Youtube Downloader",bg="#d12424", fg = "white", padx =77, font = "Helvetica 36 bold italic").pack(side = LEFT)
+canvas = tk.Canvas(root, height=100, width=490, bg="#4c5778")
+Title = Label(canvas, text="Youtube Downloader",bg="#4c5778", fg = "black", padx =78, font = "arial 36 bold ").pack(side = LEFT)
 canvas.pack()
 
 #Paste link
-frame = tk.Frame(root, bg="#d12424",padx =109, pady = 9)
-L1 = Label(frame,pady=2, padx=4, text="Paste Link : ", font = "Helvetica 20 bold italic", bg="#d12424", fg="white" )
+frame = tk.Frame(root, bg="#4c5778",padx =110, pady = 9)
+L1 = Label(frame,pady=2, padx=4, text="Paste Link : ", font = "arial 20 bold ", bg="#4c5778", fg="black" )
 L1.pack(side = LEFT)
-E1 = Entry(frame, bd =2, bg="#d12424", font = "Helvetica 16 bold italic", fg="white")
+E1 = Entry(frame, bd =2, bg="#4c5778", font = "arial 16 bold ", fg="black")
 E1.pack(side = LEFT)
 frame.pack(side = TOP)
 
-#buttons for mp3 and video download
-frame = tk.Frame(root, bg="#d12424",padx =18, pady = 9)
+#checkboxes
+frame = tk.Frame(root, bg="#4c5778",padx = 102, pady = 9)
+var1 = IntVar()
+Checkbutton(frame, text="HD(720p)", bg = "#4c5778", activebackground ="#4c5778",  font = "arial 15 bold ", fg="black", activeforeground="black", variable=var1).grid(row=0, column = 0, sticky=W)
+var2 = IntVar()
+Checkbutton(frame, text="Highest Quality", bg = "#4c5778", activebackground ="#4c5778",  font = "arial 15 bold ", fg="black", variable=var2).grid(row=0, column = 1, sticky=W)
+var3 = IntVar()
+Checkbutton(frame, text="Audio(mp3)", bg = "#4c5778", activebackground ="#4c5778",  font = "arial 15 bold ", fg="black", variable=var3).grid(row=0, column = 2, sticky=W)
+frame.pack()
 
+#buttons for mp3 and video download
+frame = tk.Frame(root, bg="#4c5778",padx =18, pady = 9)
+
+"""
 #button for mp3dl
-B3 = tk.Button(frame, padx=50, pady=0, text="Download mp3", font = "Helvetica 18 bold italic", bg="#d12424", fg="white", command = mp3_dl)
+B3 = tk.Button(frame, padx=50, pady=0, text="Download mp3", font = "arial 18 bold ", bg="#4c5778", fg="black", command = mp3_dl)
 B3.pack(side = RIGHT)
 frame.pack(side = TOP)
+"""
 
-#button for videodl
-B2 = tk.Button(frame, padx=50, pady=0, text="Download Video", font = "Helvetica 18 bold italic", bg="#d12424", fg="white", command = video_dl)
+#button for download
+B2 = tk.Button(frame, padx=234, pady=0, text="Download", font = "arial 18 bold ", bg="#4c5778", fg="black", command = video_dl)
 B2.pack(side = RIGHT)
 frame.pack(side = TOP)
 
 #clip start and end
-frame = tk.Frame(root, bg ="#d12424", pady=15,padx=72)
+frame = tk.Frame(root, bg ="#4c5778", pady=15,padx=7)
 
 #clip start time
-L2 = Label(frame,pady=0, padx=0, text="Clip Start (00:00) : ", font = "Helvetica 20 bold italic", bg="#d12424", fg="white")
+L2 = Label(frame,pady=0, padx=0, text="Clip Start (00:00) : ", font = "arial 16 bold ", bg="#4c5778", fg="black")
 L2.pack(side = LEFT)
-E2 = Entry(frame, bd =2, bg="#d12424", font = "Helvetica 16 bold italic", fg="white")
+E2 = Entry(frame, bd =2, bg="#4c5778", font = "arial 16 bold ", fg="black", width=10)
 E2.pack(side = LEFT)
-frame.pack()
+
 
 #clip end time
-frame = tk.Frame(root, bg ="#d12424", pady=15,padx=77)
-L3 = Label(frame, text="Clip End (00:00) : ", font = "Helvetica 20 bold italic", bg="#d12424", fg="white")
+
+L3 = Label(frame, text="Clip End (00:00) : ", font = "arial 16 bold ", bg="#4c5778", fg="black")
 L3.pack(side = LEFT)
-E3 = Entry(frame, bd =2, bg="#d12424", font = "Helvetica 16 bold italic", fg="white")
+E3 = Entry(frame, bd =2, bg="#4c5778", font = "arial 16 bold ", fg="black", width=10)
 E3.pack(side = LEFT)
 frame.pack()
 
 #button for clipdl
-frame = Frame(root, padx = 19, pady=5, bg = "#d12424")
-B1 = tk.Button(frame, padx=205, pady=2, text="Download Clip", font = "Helvetica 18 bold italic", bg="#d12424", fg="white", command = clip_dl)
+frame = Frame(root, padx = 19, pady=5, bg = "#4c5778")
+B1 = tk.Button(frame, padx=205, pady=2, text="Download Clip", font = "arial 18 bold ", bg="#4c5778", fg="black", command = clip_dl)
 B1.pack()
 frame.pack(side = BOTTOM)
+
+"""
+#button for test
+frame = Frame(root, padx = 19, pady=5, bg = "#4c5778")
+B1 = tk.Button(frame, padx=205, pady=2, text="Test", font = "arial 18 bold ", bg="#4c5778", fg="black") #command = var_states)
+B1.pack()
+frame.pack(side = BOTTOM)
+"""
 
 root.mainloop()
