@@ -16,4 +16,3 @@ pip install -r requirements.txt
 
 Run gui youtube-dl.py
 
-<img src='https://github.com/Shalmon123/GUIYoutube-dl/blob/main/lmao.png?raw=true'>
