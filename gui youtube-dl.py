@@ -3,11 +3,14 @@ import ffmpeg
 import os
 import tkinter as tk
 from tkinter import *
-
+from tkinter.filedialog import askdirectory
 
 
 #code to download clips
 def clip_dl():
+
+    dl_path = askdirectory(title='Select Folder to Save File')
+    
     #input for links / starttime / endtime
     link = str(E1.get())
     startTimeRaw = str(E2.get())
@@ -24,26 +27,26 @@ def clip_dl():
     endTime = int(minute2sec2) * int(60) + int(sec2)
 
     #run command to download clip
-    os.system('youtube-dl -v -f 22 '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" ')
+    os.system('youtube-dl -v -f 22 '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s"')
 
 
 #code to download mp3
 def mp3_dl():
+    dl_path = askdirectory(title='Select Folder to Save File')
     link = str(E1.get())
-
-    os.system('youtube-dl -v -x --audio-format mp3 --audio-quality 2 ' + link)
+    os.system('youtube-dl -v -x --audio-format mp3 --audio-quality 2 ' + link + ' -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s"')
 
 #code to download highest quality
 def max_dl():
+    dl_path = askdirectory(title='Select Folder to Save File')
     link = str(E1.get())
-
-    os.system('youtube-dl -v -f bestvideo+bestaudio '+ link)
+    os.system('youtube-dl -v -f bestvideo+bestaudio '+ link + ' -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s"')
 
 #code to download 720p
 def hd_dl():
+    dl_path = askdirectory(title='Select Folder to Save File')
     link = str(E1.get())
-
-    os.system('youtube-dl -v -f 22 '+ link)
+    os.system('youtube-dl -v -f 22 '+ link + ' -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s"')
 
 def video_dl():
     hddl = (var1.get())
@@ -75,6 +78,16 @@ root.iconphoto(False, window_logo)
 canvas = tk.Canvas(root, height=100, width=490, bg="#4c5778")
 Title = Label(canvas, text="Youtube Downloader",bg="#4c5778", fg = "black", padx =78, font = "arial 36 bold ").pack(side = LEFT)
 canvas.pack()
+
+frame = tk.Frame(root, bg="#4c5778",padx = 0, pady = 9)
+
+"""
+#button for download
+direcbutton = tk.Button(frame, padx=30, pady=0, text="Set Download Folder", font = "arial 16 bold ", bg="#4c5778", fg="black", command = set_dl_path)
+direcbutton.pack(side = RIGHT)
+frame.pack(side = TOP)
+frame.pack()
+"""
 
 #Paste link
 frame = tk.Frame(root, bg="#4c5778",padx =110, pady = 9)
@@ -136,7 +149,7 @@ frame.pack(side = BOTTOM)
 """
 #button for test
 frame = Frame(root, padx = 19, pady=5, bg = "#4c5778")
-B1 = tk.Button(frame, padx=205, pady=2, text="Test", font = "arial 18 bold ", bg="#4c5778", fg="black") #command = var_states)
+B1 = tk.Button(frame, padx=205, pady=2, text="Test", font = "arial 18 bold ", bg="#4c5778", fg="black", command = set_dl_path)
 B1.pack()
 frame.pack(side = BOTTOM)
 """
