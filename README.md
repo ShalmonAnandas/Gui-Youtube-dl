@@ -5,7 +5,9 @@ GUI for youtube-dl can download videos and clips. Will add more features later.
 
 ## Instructions:
 Paste link, select the format you want to download in (can choose multiple) and click on download.
+
 To use custom arguments type in your arguments and click save args, then relaunch the app to download with custom arguments.
+
 To download clips put the timestamps in the same format shown in the GUI.
 
 ## Windows Binary:
