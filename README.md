@@ -1,7 +1,7 @@
 # GUIYoutube-dl
 GUI for youtube-dl can download videos and clips. Will add more features later.
 
-<img src='https://github.com/Shalmon123/GUIYoutube-dl/blob/main/gui snap3.png?raw=true'>
+<img src='https://github.com/Shalmon123/GUIYoutube-dl/blob/main/gui snap4.png?raw=true'>
 
 ## Windows Binary:
 Windows Binary taken down because it requires too many dependencies to be installed beforehand.
