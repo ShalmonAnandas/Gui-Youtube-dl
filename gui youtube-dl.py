@@ -4,11 +4,28 @@ from tkinter import *
 from tkinter.filedialog import askdirectory
 
 
+if os.path.isfile('customArgs.txt'):
+    file = open('customArgs.txt', 'r')
+    args = str(file.read())
+
+
+def arguments():
+    if len(argentry.get()) > 1:
+        args = argentry.get()
+    else:
+        file = open('customArgs.txt', 'r')
+        args = str(file.read())
+
+
+def save_args():
+    file = open('customArgs.txt', 'w')
+    file.write(str(argentry.get()))
+
+
 #code to download clips
 def clip_dl():
 
     dl_path = askdirectory(title='Select Folder to Save File')
-    
     #input for links / starttime / endtime
     link = str(E1.get())
     startTimeRaw = str(E2.get())
@@ -25,26 +42,35 @@ def clip_dl():
     endTime = int(minute2sec2) * int(60) + int(sec2)
 
     #run command to download clip
-    os.system('youtube-dl -v -f 22 '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s"')
+    os.system('youtube-dl -v -f 22 '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s" ' + args)
+    #test
+    #print('youtube-dl -v -f 22 '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s" ' + args)
 
 
 #code to download mp3
 def mp3_dl():
+
     dl_path = askdirectory(title='Select Folder to Save File')
     link = str(E1.get())
-    os.system('youtube-dl -v -x --audio-format mp3 --audio-quality 2 ' + link + ' -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s"')
+    os.system('youtube-dl -v -x --audio-format mp3 --audio-quality 2 ' + link + ' -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s" ' + args)
+    #test
+    #print('youtube-dl -v -x --audio-format mp3 --audio-quality 2 ' + link + ' -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s" ' + args)
 
 #code to download highest quality
 def max_dl():
     dl_path = askdirectory(title='Select Folder to Save File')
     link = str(E1.get())
-    os.system('youtube-dl -v -f bestvideo+bestaudio '+ link + ' -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s"')
+    os.system('youtube-dl -v -f bestvideo+bestaudio '+ link + ' -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s" ' + args)
+    #test
+    #print('youtube-dl -v -f bestvideo+bestaudio '+ link + ' -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s" ' + args)
 
 #code to download 720p
 def hd_dl():
     dl_path = askdirectory(title='Select Folder to Save File')
     link = str(E1.get())
-    os.system('youtube-dl -v -f 22 '+ link + ' -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s"')
+    os.system('youtube-dl -v -f 22 '+ link + ' -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s" ' + args)
+    #test
+    #print('youtube-dl -v -f 22 '+ link + ' -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s" ' + args)
 
 def video_dl():
     hddl = (var1.get())
@@ -66,11 +92,13 @@ def video_dl():
     else:
         pass
 
+
+
 #start of gui
 root = tk.Tk()
 root.title('Youtube Downloader')
-window_logo = PhotoImage(file = 'logo.png')
-root.iconphoto(False, window_logo)
+#window_logo = PhotoImage(file = 'logo.png')
+#root.iconphoto(False, window_logo)
 
 #heading
 canvas = tk.Canvas(root, height=100, width=490, bg="#4c5778")
@@ -105,10 +133,35 @@ var3 = IntVar()
 Checkbutton(frame, text="Audio(mp3)", bg = "#4c5778", activebackground ="#4c5778",  font = "arial 15 bold ", fg="black", variable=var3).grid(row=0, column = 2, sticky=W)
 frame.pack()
 
+
+frame = tk.Frame(root, bg="#4c5778",padx =55, pady = 9)
+arglabel = Label(frame,pady=2, padx=4, text="Custom Arguments : ", font = "arial 14 bold ", bg="#4c5778", fg="black" )
+arglabel.pack(side = LEFT)
+argentry = Entry(frame, bd =2, bg="#4c5778", font = "arial 14 bold ", fg="black")
+argentry.pack(side = LEFT)
+argbutton = tk.Button(frame, padx=5, pady=0, text="save args", font = "arial 12 bold ", bg="#4c5778", fg="black", command = save_args)
+argbutton.pack()
+frame.pack()
+
+if len(args) > 1:
+    frame = tk.Frame(root, bg="#4c5778",padx =33, pady = 9)
+    labelforargs = Label(frame,pady=2, padx=2, text="custom args : ", font = "arial 12 bold", bg="#777e91", fg="black" )
+    labelforargs.pack(side = LEFT)
+    argumentlabels = Label(frame,pady=2, padx=2, text=args, font = "arial 12 bold", bg="#777e91", fg="black", width = 45 )
+    argumentlabels.pack(side = LEFT)
+    frame.pack()
+else:
+    pass
+
+"""
+if len(argentry.get()) > 1:
+    args = argentry.get()
+else:
+    gamer
+"""
+
 #buttons for mp3 and video download
 frame = tk.Frame(root, bg="#4c5778",padx =18, pady = 9)
-
-
 #button for download
 B2 = tk.Button(frame, padx=234, pady=0, text="Download", font = "arial 18 bold ", bg="#4c5778", fg="black", command = video_dl)
 B2.pack(side = RIGHT)
@@ -133,7 +186,7 @@ E3.pack(side = LEFT)
 frame.pack()
 
 #button for clipdl
-frame = Frame(root, padx = 19, pady=5, bg = "#4c5778")
+frame = Frame(root, padx = 20, pady=5, bg = "#4c5778")
 B1 = tk.Button(frame, padx=205, pady=2, text="Download Clip", font = "arial 18 bold ", bg="#4c5778", fg="black", command = clip_dl)
 B1.pack()
 frame.pack(side = BOTTOM)
