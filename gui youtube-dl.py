@@ -1,5 +1,3 @@
-import youtube_dl
-import ffmpeg
 import os
 import tkinter as tk
 from tkinter import *
@@ -110,12 +108,6 @@ frame.pack()
 #buttons for mp3 and video download
 frame = tk.Frame(root, bg="#4c5778",padx =18, pady = 9)
 
-"""
-#button for mp3dl
-B3 = tk.Button(frame, padx=50, pady=0, text="Download mp3", font = "arial 18 bold ", bg="#4c5778", fg="black", command = mp3_dl)
-B3.pack(side = RIGHT)
-frame.pack(side = TOP)
-"""
 
 #button for download
 B2 = tk.Button(frame, padx=234, pady=0, text="Download", font = "arial 18 bold ", bg="#4c5778", fg="black", command = video_dl)
