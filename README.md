@@ -5,7 +5,7 @@ GUI for youtube-dl can download videos and clips. Will add more features later.
 Windows Binary taken down because it requires too many dependencies to be installed beforehand.
 
 
-## Build from source
+## Clone git repo
 ### Requires Python and ffmpeg to be installed!!
 
 Clone Github Repo
