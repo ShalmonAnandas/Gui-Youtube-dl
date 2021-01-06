@@ -7,6 +7,8 @@ from tkinter.filedialog import askdirectory
 if os.path.isfile('customArgs.txt'):
     file = open('customArgs.txt', 'r')
     args = str(file.read())
+else:
+    args = ""
 
 
 def arguments():
