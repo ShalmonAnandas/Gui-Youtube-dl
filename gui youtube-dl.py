@@ -65,7 +65,7 @@ def clip_dl_audio():
     endTime = int(minute2sec2) * int(60) + int(sec2)
 
     #run command to download clip
-    os.system('youtube-dl -v -f 140 '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s" ' + args)
+    os.system('youtube-dl -v -f bestaudio '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s" ' + args)
     #test
     #print('youtube-dl -v -f 22 '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + str(dl_path) + '/%(title)s-%(id)s.%(ext)s" ' + args)
 
@@ -225,12 +225,12 @@ frame.pack()
 
 #button for clipdl
 frame = Frame(root, padx = 20, pady=5, bg = "#4c5778")
-B1 = tk.Button(frame, padx=205, pady=2, text="Download Clip", font = "arial 18 bold ", bg="#4c5778", fg="black", command = clip_dl)
+B1 = tk.Button(frame, padx=64, pady=2, text="Download Clip", font = "arial 14 bold ", bg="#4c5778", fg="black", command = clip_dl)
 B1.pack(side= LEFT)
-"""
+
 mp3button = tk.Button(frame, padx=64, pady=2, text="Download Clip mp3", font = "arial 14 bold ", bg="#4c5778", fg="black", command = clip_dl_audio)
 mp3button.pack(side = LEFT)
-"""
+
 frame.pack(side = BOTTOM)
 
 """
