@@ -15,6 +15,7 @@ To download clips put the timestamps in the same format shown in the GUI.
 
 ## Windows Binary:
 ~~Windows Binary taken down because it requires too many dependencies to be installed beforehand.~~
+
 Windows Binary up again. Requirements are now prepacked in a zip file. You can download the GUI exe by itself if you have the requirements installed alread.
 
 
