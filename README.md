@@ -29,7 +29,3 @@ Open command prompt in the cloned folder and run "pip install -r requirements.tx
 
 Run gui youtube-dl.py
 
-
-## Take a look at the code
-
-<img src='https://github.com/Shalmon123/GUIYoutube-dl/blob/main/codev2.png?raw=true'>
