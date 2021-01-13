@@ -3,3 +3,6 @@
 
 # E:\GUI Youtube-dl\git\gui youtube-dl.py: 1
 youtube_dl == 2020.12.14
+
+# E:\GUI Youtube-dl\git\gui youtube-dl.py: 1
+wxPython == 4.1.1
