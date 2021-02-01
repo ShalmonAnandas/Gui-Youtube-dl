@@ -17,9 +17,9 @@ import wx.xrc
 class MyFrame ( wx.Frame ):
 	
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( -1,-1 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 538,325 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 		
-		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 90, False, wx.EmptyString ) )
 		self.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNSHADOW ) )
 		self.SetBackgroundColour( wx.Colour( 82, 90, 105 ) )
@@ -45,9 +45,9 @@ class MyFrame ( wx.Frame ):
 		self.link_box = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 370,-1 ), 0 )
 		gbSizer1.Add( self.link_box, wx.GBPosition( 1, 1 ), wx.GBSpan( 1, 3 ), wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, 5 )
 		
-		quality_selection_drop_downChoices = [ u"720p", u"Best Quality Available", u"Audio (mp3)", u"Non Youtube" ]
+		quality_selection_drop_downChoices = [ u"360p", u"480p", u"720p", u"1080p", u"1440p", u"4k", u"Audio (mp3)", u"Non Youtube" ]
 		self.quality_selection_drop_down = wx.ComboBox( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), quality_selection_drop_downChoices, 0 )
-		self.quality_selection_drop_down.SetSelection( 4 )
+		self.quality_selection_drop_down.SetSelection( 3 )
 		gbSizer1.Add( self.quality_selection_drop_down, wx.GBPosition( 2, 1 ), wx.GBSpan( 1, 3 ), wx.ALL|wx.EXPAND, 5 )
 		
 		self.select_quality_label = wx.StaticText( self, wx.ID_ANY, u"Select Quality :", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_LEFT )
@@ -122,7 +122,6 @@ class MyFrame ( wx.Frame ):
 		
 		self.SetSizer( gbSizer1 )
 		self.Layout()
-		gbSizer1.Fit( self )
 		
 		self.Centre( wx.BOTH )
 		
