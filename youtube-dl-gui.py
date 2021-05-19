@@ -97,7 +97,7 @@ class CalcFrame(yt_dl.MyFrame):
         endTime = int(minute2sec2) * int(60) + int(sec2)
 
         #run command to download clip
-        os.system('youtube_dl\__main__.exe -v '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' )
+        os.system('youtube_dl\__main__.exe -v -f 22 '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' )
         #test
         #print('youtube-dl -v -f 22 '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ')
 

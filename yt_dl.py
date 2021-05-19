@@ -128,7 +128,7 @@ class MyFrame ( wx.Frame ):
 		# Connect Events
 		self.m_button1.Bind( wx.EVT_BUTTON, self.video_dl )
 		self.m_button2.Bind( wx.EVT_BUTTON, self.clip_dl )
-		self.m_button3.Bind( wx.EVT_BUTTON, self.clip_mp3_dl )
+		self.m_button3.Bind( wx.EVT_BUTTON, self.clip_dl_mp3 )
 
 	def __del__( self ):
 		pass
@@ -141,7 +141,7 @@ class MyFrame ( wx.Frame ):
 	def clip_dl( self, event ):
 		event.Skip()
 
-	def clip_mp3_dl( self, event ):
+	def clip_dl_mp3( self, event ):
 		event.Skip()
 
 
