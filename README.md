@@ -1,4 +1,5 @@
 # GUIYoutube-dl
+An easy Gui to download videos and an even easy clipper!
 A cross platform GUI for youtube-dl written entirely in python using the WX library.
 
 <img src='https://github.com/Shalmon123/GUIYoutube-dl/blob/main/gui.png?raw=true'>
@@ -18,4 +19,7 @@ If you want to build the windows binaries yourself, you can do that using pyinst
     3) [Youtube-dl](https://pypi.org/project/youtube_dl/)
     4) [wxPython Ubuntu](https://tutorialforlinux.com/2020/03/15/step-by-step-wxpython-python-3-ubuntu-20-04-installation/) / [wxPython Arch](https://archlinux.org/packages/community/x86_64/python-wxpython/) / [wxPython Other Distros](https://wxpython.org/blog/2017-08-17-builds-for-linux-with-pip/index.html)
 3) Run gui-youtube-dl.py
+
+## Usage:
+1) To use the clipping feature you just have to type in the timestamp of the part you want to download like shown in the gui Itself.
 
