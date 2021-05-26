@@ -118,6 +118,16 @@ class MyFrame ( wx.Frame ):
 
 		gbSizer1.Add( self.m_button3, wx.GBPosition( 8, 2 ), wx.GBSpan( 1, 2 ), wx.ALL|wx.EXPAND, 5 )
 
+		self.m_staticText8 = wx.StaticText( self, wx.ID_ANY, u"Custom Args :", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText8.Wrap( -1 )
+
+		self.m_staticText8.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bahnschrift SemiBold SemiConden" ) )
+
+		gbSizer1.Add( self.m_staticText8, wx.GBPosition( 9, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, 5 )
+
+		self.m_custom_args = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		gbSizer1.Add( self.m_custom_args, wx.GBPosition( 9, 1 ), wx.GBSpan( 1, 4 ), wx.ALL|wx.EXPAND, 5 )
+
 
 		self.SetSizer( gbSizer1 )
 		self.Layout()

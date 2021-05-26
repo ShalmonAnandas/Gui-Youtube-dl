@@ -14,13 +14,11 @@ class CalcFrame(yt_dl.MyFrame):
         if self.m_checkBox2.GetValue() == 1:
             link = str(self.link_box.GetValue())
             directory = self.m_dirPicker1.GetPath()
-
-            #args = str(self.m_custom_args.GetValue())
-
+            args = str(self.m_custom_args.GetValue())
             if platform.system() == "Windows":
-                os.system('youtube_dl\__main__.exe -v  '+ link + ' -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' )
+                os.system('youtube_dl\__main__.exe -v  '+ link + ' -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' + args )
             elif platform.system() == "Linux":
-                os.system('youtube_dl/__main__.py -v  '+ link + ' -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' )
+                os.system('youtube_dl/__main__.py -v  '+ link + ' -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' + args)
             else:
                 print("error")
             #test
@@ -30,12 +28,12 @@ class CalcFrame(yt_dl.MyFrame):
             link = str(self.link_box.GetValue())
             directory = str(self.m_dirPicker1.GetPath())
 
-            ###args = str(self.m_custom_args.GetValue())
+            args = str(self.m_custom_args.GetValue())
 
             if platform.system() == "Windows":
-                os.system('youtube_dl\__main__.exe -v -x --audio-format mp3 --audio-quality 2 ' + link + ' -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' )
+                os.system('youtube_dl\__main__.exe -v -x --audio-format mp3 --audio-quality 2 ' + link + ' -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' + args)
             elif platform.system() == "Linux":
-                os.system('youtube_dl/__main__.py -v -x --audio-format mp3 --audio-quality 2 ' + link + ' -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' )
+                os.system('youtube_dl/__main__.py -v -x --audio-format mp3 --audio-quality 2 ' + link + ' -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' + args )
             else:
                 print("error")
             #test
@@ -45,12 +43,12 @@ class CalcFrame(yt_dl.MyFrame):
             link = str(self.link_box.GetValue())
             directory = str(self.m_dirPicker1.GetPath())
 
-            #args = str(self.m_custom_args.GetValue())
+            args = str(self.m_custom_args.GetValue())
 
             if platform.system() == "Windows":
-                os.system('youtube_dl\__main__.exe -v -f bestvideo[width=640]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-360p.%(ext)s" ' )
+                os.system('youtube_dl\__main__.exe -v -f bestvideo[width=640]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-360p.%(ext)s" ' + args)
             elif platform.system() == "Linux":
-                os.system('youtube_dl/__main__.py -v -f bestvideo[width=640]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-360p.%(ext)s" ' )
+                os.system('youtube_dl/__main__.py -v -f bestvideo[width=640]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-360p.%(ext)s" ' + args)
             else:
                 print("error")
             #test
@@ -60,12 +58,12 @@ class CalcFrame(yt_dl.MyFrame):
             link = str(self.link_box.GetValue())
             directory = str(self.m_dirPicker1.GetPath())
 
-            #args = str(self.m_custom_args.GetValue())
+            args = str(self.m_custom_args.GetValue())
 
             if platform.system() == "Windows":
-                os.system('youtube_dl\__main__.exe -v -f bestvideo[width=854]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-480p.%(ext)s" ' )
+                os.system('youtube_dl\__main__.exe -v -f bestvideo[width=854]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-480p.%(ext)s" ' + args)
             elif platform.system() == "Linux":
-                os.system('youtube_dl/__main__.py -v -f bestvideo[width=854]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-480p.%(ext)s" ' )
+                os.system('youtube_dl/__main__.py -v -f bestvideo[width=854]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-480p.%(ext)s" ' + args)
             else:
                 print("error")
             #test
@@ -75,12 +73,12 @@ class CalcFrame(yt_dl.MyFrame):
             link = str(self.link_box.GetValue())
             directory = str(self.m_dirPicker1.GetPath())
 
-            #args = str(self.m_custom_args.GetValue())
+            args = str(self.m_custom_args.GetValue())
 
             if platform.system() == "Windows":
-                os.system('youtube_dl\__main__.exe -v -f bestvideo[width=1280]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-720p.%(ext)s" ' )
+                os.system('youtube_dl\__main__.exe -v -f bestvideo[width=1280]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-720p.%(ext)s" ' + args)
             elif platform.system() == "Linux":
-                os.system('youtube_dl/__main__.py -v -f bestvideo[width=1280]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-720p.%(ext)s" ' )
+                os.system('youtube_dl/__main__.py -v -f bestvideo[width=1280]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-720p.%(ext)s" ' + args)
             else:
                 print("error")
             #test
@@ -90,12 +88,12 @@ class CalcFrame(yt_dl.MyFrame):
             link = str(self.link_box.GetValue())
             directory = str(self.m_dirPicker1.GetPath())
 
-            #args = str(self.m_custom_args.GetValue())
+            args = str(self.m_custom_args.GetValue())
 
             if platform.system() == "Windows":
-                os.system('youtube_dl\__main__.exe -v -f bestvideo[width=1920]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-1080p.%(ext)s" ' )
+                os.system('youtube_dl\__main__.exe -v -f bestvideo[width=1920]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-1080p.%(ext)s" ' + args)
             elif platform.system() == "Linux":
-                os.system('youtube_dl/__main__.py -v -f bestvideo[width=1920]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-1080p.%(ext)s" ' )
+                os.system('youtube_dl/__main__.py -v -f bestvideo[width=1920]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-1080p.%(ext)s" ' + args)
             else:
                 print("error")
             #test
@@ -105,12 +103,12 @@ class CalcFrame(yt_dl.MyFrame):
             link = str(self.link_box.GetValue())
             directory = str(self.m_dirPicker1.GetPath())
 
-            #args = str(self.m_custom_args.GetValue())
+            args = str(self.m_custom_args.GetValue())
 
             if platform.system() == "Windows":
-                os.system('youtube_dl\__main__.exe -v -f bestvideo[width=2560]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-1440p.%(ext)s" ' )
+                os.system('youtube_dl\__main__.exe -v -f bestvideo[width=2560]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-1440p.%(ext)s" ' + args)
             elif platform.system() == "Linux":
-                os.system('youtube_dl/__main__.py -v -f bestvideo[width=2560]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-1440p.%(ext)s" ' )
+                os.system('youtube_dl/__main__.py -v -f bestvideo[width=2560]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-1440p.%(ext)s" ' + args)
             else:
                 print("error")
             #test
@@ -120,12 +118,12 @@ class CalcFrame(yt_dl.MyFrame):
             link = str(self.link_box.GetValue())
             directory = str(self.m_dirPicker1.GetPath())
 
-            ###args = str(self.m_custom_args.GetValue())
+            args = str(self.m_custom_args.GetValue())
 
             if platform.system() == "Windows":
-                os.system('youtube_dl\__main__.exe -v -f bestvideo[width=3840]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-4k.%(ext)s" ' )
+                os.system('youtube_dl\__main__.exe -v -f bestvideo[width=3840]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-4k.%(ext)s" ' + args)
             elif platform.system() == "Linux":
-                os.system('youtube_dl/__main__.py -v -f bestvideo[width=3840]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-4k.%(ext)s" ' )
+                os.system('youtube_dl/__main__.py -v -f bestvideo[width=3840]+bestaudio '+ link + ' -o "' + directory + '/%(title)s-%(id)s-4k.%(ext)s" ' + args)
             else:
                 print("error")
             #test
@@ -138,7 +136,7 @@ class CalcFrame(yt_dl.MyFrame):
 
         link = str(self.link_box.GetValue())
         directory = str(self.m_dirPicker1.GetPath())
-        #args = str(self.m_custom_args.GetValue())
+        args = str(self.m_custom_args.GetValue())
         startTimeRaw = str(self.clip_start_box.GetValue())
         endTimeRaw = str(self.clip_end_box.GetValue())
 
@@ -155,9 +153,9 @@ class CalcFrame(yt_dl.MyFrame):
         #run command to download clip
 
         if platform.system() == "Windows":
-            os.system('youtube_dl\__main__.exe -v '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' )
+            os.system('youtube_dl\__main__.exe -v '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' + args)
         elif platform.system() == "Linux":
-            os.system('youtube_dl/__main__.py -v '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' )
+            os.system('youtube_dl/__main__.py -v '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' + args)
         else:
             print("error")
         #test
@@ -167,7 +165,7 @@ class CalcFrame(yt_dl.MyFrame):
 
         link = str(self.link_box.GetValue())
         directory = str(self.m_dirPicker1.GetPath())
-        #args = str(self.m_custom_args.GetValue())
+        args = str(self.m_custom_args.GetValue())
         startTimeRaw = str(self.clip_start_box.GetValue())
         endTimeRaw = str(self.clip_end_box.GetValue())
 
@@ -184,9 +182,9 @@ class CalcFrame(yt_dl.MyFrame):
         #run command to download clip
 
         if platform.system() == "Windows":
-            os.system('youtube_dl\__main__.exe -v -f bestaudio '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' )
+            os.system('youtube_dl\__main__.exe -v -f bestaudio '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' + args)
         elif platform.system() == "Linux":
-            os.system('youtube_dl/__main__.py -v -f bestaudio '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' )
+            os.system('youtube_dl/__main__.py -v -f bestaudio '+ link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to '+ str(endTime) + '" -o "' + directory + '/%(title)s-%(id)s.%(ext)s" ' + args)
         else:
             print("error")
         #test
