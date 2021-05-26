@@ -8,6 +8,8 @@ A cross platform GUI for youtube-dl written entirely in python using the WX libr
 1) Download the Zip from releases
 2) Unzip and run youtube-dl-gui.exe
 
+If you want to build the windows binaries yourself, you can do that using pyinstaller.
+
 ### Linux:
 1) Clone the repo
 2) Install Requirements : 
