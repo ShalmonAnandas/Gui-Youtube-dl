@@ -4,7 +4,7 @@ GUI for youtube-dl can download videos and clips. Will add more features later.
 ### Requirements!!
 [Python](https://www.python.org/downloads/), [ffmpeg](https://ffmpeg.org/download.html), [Youtube-dl](https://pypi.org/project/youtube_dl/), [wxPython](https://pypi.org/project/wxPython/)
 
-<img src='https://github.com/Shalmon123/GUIYoutube-dl/blob/main/gui.png?raw=true'>
+<img src='https://github.com/Shalmon123/GUIYoutube-dl/blob/main/gui v2.0.png?raw=true'>
 
 ## Instructions:
 Paste link, select the format you want to download in (can choose multiple) and click on download.
