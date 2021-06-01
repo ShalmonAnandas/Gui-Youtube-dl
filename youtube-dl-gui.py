@@ -1,21 +1,55 @@
 import os
+from os import path
 import platform
 import sys
 from pathlib import Path
 
 import wx
+from wx.core import Dialog
+
 
 import yt_dl
+import unknown_os_popup
+
 
 IS_WINDOWS = platform.system() == "Windows"
 IS_LINUX = platform.system() == "Linux"
 
-if IS_WINDOWS:
-    YOUTUBEDL_MAIN = "youtube_dl\\__main__.exe -v "
-elif IS_LINUX:
-    YOUTUBEDL_MAIN = "youtube_dl/__main__.py -v "
+#Changed it so it works well with cloning straight out of the box
+win_dl = "youtube_dl\\__main__.exe -v "
+lin_dl = "youtube_dl/__main__ -v "
+if IS_WINDOWS == True:
+    uni_dl = "youtube_dl\\__main__.py -v "
 else:
-    sys.exit("Error: Unknow Platform")
+    uni_dl = "youtube_dl/__main__.py -v "
+
+if IS_WINDOWS:
+    if path.exists("youtube_dl\\__main__.exe"):
+        YOUTUBEDL_MAIN = win_dl
+    else:
+        YOUTUBEDL_MAIN = uni_dl
+elif IS_LINUX:
+    if path.exists("youtube_dl/__main__"):
+        YOUTUBEDL_MAIN = lin_dl
+    else:
+        YOUTUBEDL_MAIN = uni_dl
+else:
+    #popup for unknown os
+    class CalcFrame(unknown_os_popup.MyDialog1):
+        def __init__(self, parent):
+            unknown_os_popup.MyDialog1.__init__(self, parent)
+
+        def exit(self, event):
+            sys.exit()
+
+    app = wx.App(False)
+    frame = CalcFrame(None)
+    frame.Show(True)
+    # start the applications
+    app.MainLoop()
+
+    
+
 
 HOME = Path().home() / Path("Videos")
 
@@ -37,6 +71,7 @@ class CalcFrame(yt_dl.MyFrame):
         text_ctr: wx.TextCtrl = self.m_dirPicker1.GetTextCtrl()
         text_ctr.AppendText(str(HOME))
         self.m_checkBox2.Hide()
+
 
     @staticmethod
     def convert2seconds(raw_time: str) -> int:
@@ -69,7 +104,6 @@ class CalcFrame(yt_dl.MyFrame):
                 + '/%(title)s-%(id)s-144p.%(ext)s" '
                 + args
             )
-            print(cmd_args)
         elif self.quality_selection_drop_down.GetSelection() == 6:
             cmd_args = (
                 "-f bestvideo[width=426]+bestaudio "

@@ -1,5 +1,6 @@
 __pycache__
 *.pyc
+testing.py
 
 
 dist/
@@ -42,3 +43,4 @@ coverage.xml
 *.mkv
 *.swf
 *.part
+*.exe
