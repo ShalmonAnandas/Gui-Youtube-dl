@@ -60,6 +60,25 @@ class CalcFrame(yt_dl.MyFrame):
                 + '/%(title)s-%(id)s.%(ext)s" '
                 + args
             )
+        elif self.quality_selection_drop_down.GetSelection() == 7:
+            cmd_args = (
+                "-f bestvideo[width=256]+bestaudio "
+                + link
+                + ' -o "'
+                + directory
+                + '/%(title)s-%(id)s-144p.%(ext)s" '
+                + args
+            )
+            print(cmd_args)
+        elif self.quality_selection_drop_down.GetSelection() == 6:
+            cmd_args = (
+                "-f bestvideo[width=426]+bestaudio "
+                + link
+                + ' -o "'
+                + directory
+                + '/%(title)s-%(id)s-240p.%(ext)s" '
+                + args
+            )
         elif self.quality_selection_drop_down.GetSelection() == 5:
             cmd_args = (
                 "-f bestvideo[width=640]+bestaudio "
