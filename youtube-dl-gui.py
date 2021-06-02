@@ -2,8 +2,8 @@ import os
 from os import path
 import platform
 import sys
+sys.path.insert(1, 'gui_files')
 from pathlib import Path
-
 import wx
 from wx.core import Dialog
 
