@@ -29,3 +29,6 @@ A cross platform GUI for youtube-dl written entirely in python using the WX libr
 ## Usage:
 1) To use the clipping feature you just have to type in the timestamp of the part you want to download like shown in the gui Itself.
 
+## Known Bugs:
+1) If the git cloned version dosent run on linux with error 'r/python does not exist' run 'fix.py' and it should work.
+
