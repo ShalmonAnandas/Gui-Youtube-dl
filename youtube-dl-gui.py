@@ -68,8 +68,10 @@ def run_youtube_dl(args: str) -> None:
 class CalcFrame(yt_dl.MyFrame):
     def __init__(self, parent):
         yt_dl.MyFrame.__init__(self, parent)
-        text_ctr: wx.TextCtrl = self.m_dirPicker1.GetTextCtrl()
-        text_ctr.AppendText(str(HOME))
+        if IS_WINDOWS:
+            text_ctr: wx.TextCtrl = self.m_dirPicker1.GetTextCtrl()
+            text_ctr.AppendText(str(HOME))
+        else: pass
         self.m_checkBox2.Hide()
 
 
