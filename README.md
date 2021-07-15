@@ -1,6 +1,6 @@
 # GUIYoutube-dl
 An easy Gui to download videos and an even easy clipper!
-A cross platform GUI for youtube-dl written entirely in python using the WX library.
+A cross platform GUI for youtube-dl written entirely in python using the WX library
 
 <img src='https://github.com/Shalmon123/GUIYoutube-dl/blob/main/gui v2.0.png?raw=true'>
 
