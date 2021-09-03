@@ -16,20 +16,20 @@ IS_WINDOWS = platform.system() == "Windows"
 IS_LINUX = platform.system() == "Linux"
 
 #Changed it so it works well with cloning straight out of the box
-win_dl = "youtube_dl\\__main__.exe -v "
-lin_dl = "youtube_dl/__main__ -v "
+win_dl = "yt_dlp\\__main__.exe -v "
+lin_dl = "yt_dlp/__main__ -v "
 if IS_WINDOWS == True:
-    uni_dl = "youtube_dl\\__main__.py -v "
+    uni_dl = "yt_dlp\\__main__.py -v "
 else:
-    uni_dl = "youtube_dl/__main__.py -v "
+    uni_dl = "yt_dlp/__main__.py -v "
 
 if IS_WINDOWS:
-    if path.exists("youtube_dl\\__main__.exe"):
+    if path.exists("ytp_dlp\\__main__.exe"):
         YOUTUBEDL_MAIN = win_dl
     else:
         YOUTUBEDL_MAIN = uni_dl
 elif IS_LINUX:
-    if path.exists("youtube_dl/__main__"):
+    if path.exists("yt_dlp/__main__"):
         YOUTUBEDL_MAIN = lin_dl
     else:
         YOUTUBEDL_MAIN = uni_dl
