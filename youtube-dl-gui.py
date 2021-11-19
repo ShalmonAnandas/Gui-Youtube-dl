@@ -11,6 +11,7 @@ from wx.core import Dialog
 import yt_dl
 import unknown_os_popup
 
+#gamer
 
 IS_WINDOWS = platform.system() == "Windows"
 IS_LINUX = platform.system() == "Linux"
@@ -60,12 +61,12 @@ if not HOME.exists():
 def run_youtube_dl(args: str) -> None:
     """Run youtube-dl commands on platform"""
     # TODO: Change for subprocess module
-    os.system(YOUTUBEDL_MAIN + args)
+    print(YOUTUBEDL_MAIN + args)
     # Logs (can use logging module)
     # print(YOUTUBEDL_MAIN + args)
 
 
-class CalcFrame(yt_dl.MyFrame):
+class Gamer(yt_dl.MyFrame):
     def __init__(self, parent):
         yt_dl.MyFrame.__init__(self, parent)
         if IS_WINDOWS:
@@ -229,7 +230,7 @@ class CalcFrame(yt_dl.MyFrame):
 
 
 app = wx.App(False)
-frame = CalcFrame(None)
+frame = Gamer(None)
 frame.Show(True)
 # start the applications
 app.MainLoop()

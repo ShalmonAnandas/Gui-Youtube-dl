@@ -1,17 +1,8 @@
-import os 
 
-path = 'yt_dlp/version.py'
+raw_time = "01:01:00"
 
-isFile = os.path.isfile(path)
-#print(isFile)
+hours, minutes, seconds = raw_time.split(":", maxsplit=2)
+print(hours, minutes, seconds)
+gamer = (int(hours) * 60 * 60) + (int(minutes) * 60) + int(seconds)
 
-if isFile == True:
-    f = open('yt_dlp/version.py')
-    content = f.readlines()
-    versionNumber = content[2].split('=')
-    #check = versionNumber.split('=')
-    version = versionNumber[1]
-    print(version)
-
-else:
-    pass
+print(gamer)
