@@ -1,6 +1,7 @@
 __pycache__
 *.pyc
 testing.py
+test.py
 
 
 dist/

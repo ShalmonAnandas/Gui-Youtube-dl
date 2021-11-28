@@ -6,7 +6,7 @@ import noname
 
 
 def multi_video_dl(self, event):
-    link = "batch_file.txt"
+    link = "multi_download_files\\batch_file.txt"
     directory: str = self.m_dirPicker1.GetPath()
     
     if self.m_comboBox1.GetSelection() == 0:

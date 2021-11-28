@@ -46,7 +46,6 @@ class DPlayIE(InfoExtractor):
             'episode_number': 1,
         },
         'params': {
-            'format': 'bestvideo',
             'skip_download': True,
         },
     }, {
@@ -67,7 +66,6 @@ class DPlayIE(InfoExtractor):
             'episode_number': 1,
         },
         'params': {
-            'format': 'bestvideo',
             'skip_download': True,
         },
     }, {
@@ -87,7 +85,6 @@ class DPlayIE(InfoExtractor):
             'episode_number': 7,
         },
         'params': {
-            'format': 'bestvideo',
             'skip_download': True,
         },
         'skip': 'Available for Premium users',
@@ -313,9 +310,6 @@ class HGTVDeIE(DPlayIE):
             'season_number': 3,
             'episode_number': 3,
         },
-        'params': {
-            'format': 'bestvideo',
-        },
     }]
 
     def _real_extract(self, url):
@@ -325,7 +319,7 @@ class HGTVDeIE(DPlayIE):
 
 
 class DiscoveryPlusIE(DPlayIE):
-    _VALID_URL = r'https?://(?:www\.)?discoveryplus\.com/video' + DPlayIE._PATH_REGEX
+    _VALID_URL = r'https?://(?:www\.)?discoveryplus\.com/(?:\w{2}/)?video' + DPlayIE._PATH_REGEX
     _TESTS = [{
         'url': 'https://www.discoveryplus.com/video/property-brothers-forever-home/food-and-family',
         'info_dict': {
@@ -343,13 +337,16 @@ class DiscoveryPlusIE(DPlayIE):
             'episode_number': 1,
         },
         'skip': 'Available for Premium users',
+    }, {
+        'url': 'https://discoveryplus.com/ca/video/bering-sea-gold-discovery-ca/goldslingers',
+        'only_matching': True,
     }]
 
     _PRODUCT = 'dplus_us'
     _API_URL = 'us1-prod-direct.discoveryplus.com'
 
     def _update_disco_api_headers(self, headers, disco_base, display_id, realm):
-        headers['x-disco-client'] = f'WEB:UNKNOWN:{self._PRODUCT}:15.0.0'
+        headers['x-disco-client'] = f'WEB:UNKNOWN:{self._PRODUCT}:25.2.6'
 
     def _download_video_playback_info(self, disco_base, video_id, headers):
         return self._download_json(
@@ -389,3 +386,43 @@ class ScienceChannelIE(DiscoveryPlusIE):
 
     _PRODUCT = 'sci'
     _API_URL = 'us1-prod-direct.sciencechannel.com'
+
+
+class DIYNetworkIE(DiscoveryPlusIE):
+    _VALID_URL = r'https?://(?:watch\.)?diynetwork\.com/video' + DPlayIE._PATH_REGEX
+    _TESTS = [{
+        'url': 'https://watch.diynetwork.com/video/pool-kings-diy-network/bringing-beach-life-to-texas',
+        'info_dict': {
+            'id': '2309730',
+            'display_id': 'pool-kings-diy-network/bringing-beach-life-to-texas',
+            'ext': 'mp4',
+            'title': 'Bringing Beach Life to Texas',
+            'description': 'The Pool Kings give a family a day at the beach in their own backyard.',
+            'season_number': 10,
+            'episode_number': 2,
+        },
+        'skip': 'Available for Premium users',
+    }]
+
+    _PRODUCT = 'diy'
+    _API_URL = 'us1-prod-direct.watch.diynetwork.com'
+
+
+class AnimalPlanetIE(DiscoveryPlusIE):
+    _VALID_URL = r'https?://(?:www\.)?animalplanet\.com/video' + DPlayIE._PATH_REGEX
+    _TESTS = [{
+        'url': 'https://www.animalplanet.com/video/north-woods-law-animal-planet/squirrel-showdown',
+        'info_dict': {
+            'id': '3338923',
+            'display_id': 'north-woods-law-animal-planet/squirrel-showdown',
+            'ext': 'mp4',
+            'title': 'Squirrel Showdown',
+            'description': 'A woman is suspected of being in possession of flying squirrel kits.',
+            'season_number': 16,
+            'episode_number': 11,
+        },
+        'skip': 'Available for Premium users',
+    }]
+
+    _PRODUCT = 'apl'
+    _API_URL = 'us1-prod-direct.animalplanet.com'

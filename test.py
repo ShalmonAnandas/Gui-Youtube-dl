@@ -1,8 +1,11 @@
+test = open('multi_clip.txt', 'r')
+counter = 0
 
-raw_time = "01:01:00"
+content = test.read()
+content_list = content.split("\n")
 
-hours, minutes, seconds = raw_time.split(":", maxsplit=2)
-print(hours, minutes, seconds)
-gamer = (int(hours) * 60 * 60) + (int(minutes) * 60) + int(seconds)
+for i in content_list:
+    if i:
+        counter += 1
 
-print(gamer)
+print(counter)
