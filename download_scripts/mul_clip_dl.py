@@ -3,11 +3,12 @@ import sys
 sys.path.insert(1, 'gui_files')
 
 import noname
+multi_clip = os.path.join('multi_download_files', 'multi_clip.txt')
 
 
 def mul_clip_dl_func(self, event):
 
-    test = open('multi_download_files\\multi_clip.txt', 'r')
+    test = open(multi_clip, 'r')
     counter = 0
 
     content = test.read()
