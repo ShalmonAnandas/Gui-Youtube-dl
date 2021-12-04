@@ -23,7 +23,7 @@ def append_link(self, event):
     batch_file_show.close()
 
     batch_file = open(multi_clip, 'a')
-    batch_file.write(link + ' --external-downloader ffmpeg --external-downloader-args "-ss ' + str(startTime) + ' -to ' + str(endTime) + "\n")
+    batch_file.write(link + ' --external-downloader ffmpeg --external-downloader-args ffmpeg:"-ss ' + str(startTime) + ' -to ' + str(endTime) + "\n")
     batch_file.close()
 
     show_links = open(multi_clip_show, 'r')
@@ -31,7 +31,7 @@ def append_link(self, event):
     self.m_richText2.Clear()
     self.m_richText2.WriteText(links + "\n")
 
-def clear_link_func(self, event):
+def clear_all_links_func(self, event):
     clear_file = open(multi_clip_show, 'r+')
     clear_file.truncate(0)
     clear_file.close()
@@ -41,6 +41,32 @@ def clear_link_func(self, event):
     clear_file.close()
 
     show_links = open(multi_clip, 'r')
+    links = show_links.read()
+    self.m_richText2.Clear()
+    self.m_richText2.WriteText(links + "\n")
+
+def clear_link_func(self, event):
+    clear_file = open(multi_clip, 'r+')
+    lines = clear_file.readlines()
+    clear_file.close()
+
+    del lines[-1]
+    new_file = open(multi_clip, "w+")
+    for line in lines:
+        new_file.write(line)
+    new_file.close()
+
+    clear_file = open(multi_clip_show, 'r+')
+    lines = clear_file.readlines()
+    clear_file.close()
+
+    del lines[-1]
+    new_file = open(multi_clip_show, "w+")
+    for line in lines:
+        new_file.write(line)
+    new_file.close()
+
+    show_links = open(multi_clip_show, 'r')
     links = show_links.read()
     self.m_richText2.Clear()
     self.m_richText2.WriteText(links + "\n")

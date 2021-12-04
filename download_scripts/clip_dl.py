@@ -8,6 +8,8 @@ import noname
 def clip_dl_func(self, event):
     link: str = self.vid_link.GetValue()
     directory: str = self.m_dirPicker1.GetPath()
+    cookies: str = self.cookie_picker.GetPath()
+    args: str =  self.custom_args.GetValue()
 
     startTimeRaw = str(self.m_timePicker2.GetValue()).split(" ")[1]
     print(startTimeRaw)
@@ -22,26 +24,32 @@ def clip_dl_func(self, event):
 
     if self.m_comboBox1.GetSelection() == 0:
         os.system(
-                "yt-dlp -f best*+bestaudio "
+                "yt-dlp -f best*+bestaudio --cookies "
+                + cookies
+                + ' '
                 + link
-                + ' --external-downloader ffmpeg --external-downloader-args "-ss '
+                + ' --external-downloader ffmpeg --external-downloader-args ffmpeg:"-ss '
                 + str(startTime)
                 + ' -to '
                 + str(endTime)
                 + "\" -o \""
                 + directory
                 + '/%(title)s-%(id)s-best.%(ext)s" '
+                + args
                 )
     elif self.m_comboBox1.GetSelection() == 1:
         os.system(
-                "yt-dlp -f worst*+bestaudio "
+                "yt-dlp -f worst*+bestaudio --cookies "
+                + cookies
+                + ' '
                 + link
-                + ' --external-downloader ffmpeg --external-downloader-args "-ss '
+                + ' --external-downloader ffmpeg --external-downloader-args ffmpeg:"-ss '
                 + str(startTime)
                 + ' -to '
                 + str(endTime)
                 + "\" -o \""
                 + directory
                 + '/%(title)s-%(id)s-worst.%(ext)s" '
+                + args
                 )
     else: pass

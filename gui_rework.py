@@ -25,6 +25,8 @@ IS_LINUX = platform.system() == "Linux"
 
 HOME = Path().home() / Path("Videos")
 
+cookie_path = os.path.join('multi_download_files', 'default_cookies.txt')
+
 
 class MainWindow(noname.home_frame):
     def __init__(self, parent):
@@ -72,6 +74,7 @@ class MainWindow(noname.home_frame):
 class vid(noname.vid_frame):
     def __init__(self, parent):
         noname.vid_frame.__init__(self, parent)
+        self.cookie_picker.SetPath(cookie_path)
     
     def vid_dl(self, event):
         video_dl.video_dl(self, event)
@@ -79,7 +82,8 @@ class vid(noname.vid_frame):
 class mul_vid(noname.mul_vid_frame):
     def __init__(self, parent):
         noname.mul_vid_frame.__init__(self, parent)
-        add_link.clear_link_func(self, 0)
+        add_link.clear_all_links_func(self, 0)
+        self.cookie_picker.SetPath(cookie_path)
         if IS_WINDOWS:
             text_ctr: wx.TextCtrl = self.m_dirPicker1.GetTextCtrl()
             text_ctr.AppendText(str(HOME))
@@ -91,12 +95,16 @@ class mul_vid(noname.mul_vid_frame):
     def mul_vid_dl(self, event):
         multi_video_dl.multi_video_dl(self, event)
 
-    def clear_links(self, event):
+    def clear_link(self, event):
         add_link.clear_link_func(self, event)
+    
+    def clear_all_links(self, event):
+        add_link.clear_all_links_func(self, event)
 
 class clip(noname.clip_frame):
     def __init__(self, parent):
         noname.clip_frame.__init__(self, parent)
+        self.cookie_picker.SetPath(cookie_path)
         if IS_WINDOWS:
             text_ctr: wx.TextCtrl = self.m_dirPicker1.GetTextCtrl()
             text_ctr.AppendText(str(HOME))
@@ -109,7 +117,8 @@ class clip(noname.clip_frame):
 class multi_clip(noname.mul_clip_frame):
     def __init__(self, parent):
         noname.mul_clip_frame.__init__(self, parent)
-        add_clip.clear_link_func(self, 0)
+        add_clip.clear_all_links_func(self, 0)
+        self.cookie_picker.SetPath(cookie_path)
         if IS_WINDOWS:
             text_ctr: wx.TextCtrl = self.m_dirPicker1.GetTextCtrl()
             text_ctr.AppendText(str(HOME))
@@ -119,8 +128,11 @@ class multi_clip(noname.mul_clip_frame):
     def add_clip_func(self, event):
         add_clip.append_link(self, event)
 
-    def clear_links(self, event):
+    def clear_link(self, event):
         add_clip.clear_link_func(self, event)
+    
+    def clear_all_links(self, event):
+        add_clip.clear_all_links_func(self, event)
 
     def mul_clip_dl(self, event):
         mul_clip_dl.mul_clip_dl_func(self, event)
@@ -128,6 +140,7 @@ class multi_clip(noname.mul_clip_frame):
 class single_audio(noname.aud_frame):
     def __init__(self, parent):
         noname.aud_frame.__init__(self, parent)
+        self.cookie_picker.SetPath(cookie_path)
         if IS_WINDOWS:
             text_ctr: wx.TextCtrl = self.m_dirPicker5.GetTextCtrl()
             text_ctr.AppendText(str(HOME))
@@ -138,7 +151,8 @@ class single_audio(noname.aud_frame):
 class multi_audio(noname.mul_aud_frame):
     def __init__(self, parent):
         noname.mul_aud_frame.__init__(self, parent)
-        add_link.clear_link_func(self, 0)
+        add_link.clear_all_links_func(self, 0)
+        self.cookie_picker.SetPath(cookie_path)
         if IS_WINDOWS:
             text_ctr: wx.TextCtrl = self.m_dirPicker1.GetTextCtrl()
             text_ctr.AppendText(str(HOME))
@@ -147,7 +161,10 @@ class multi_audio(noname.mul_aud_frame):
         add_link.append_link(self, event)
         self.m_textCtrl2.SetValue("")
 
-    def clear_links(self, event):
+    def clear_all_links(self, event):
+        add_link.clear_all_links_func(self, event)
+    
+    def clear_link(self, event):
         add_link.clear_link_func(self, event)
 
     def mul_aud_dl(self, event):
