@@ -1,0 +1,1 @@
+pyinstaller --onefile gui_rework.py --hidden-import wx --hidden-import wx.xrc --hidden-import wx.xml --hidden-import wx.richtext
