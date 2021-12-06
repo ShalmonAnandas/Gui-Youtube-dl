@@ -11,12 +11,12 @@ def audio_dl_func(self, event):
     args: str =  self.custom_args.GetValue()
     
     os.system(
-            "yt-dlp -f bestaudio --cookies "
+            'yt-dlp -x --audio-format mp3 --audio-quality 2 --cookies '
             + cookies
             + ' '
             + link
-            + " -o \""
+            + ' -o \"'
             + directory
-            + '/%(title)s-%(id)s-2160p.%(ext)s" '
+            + '/%(title)s-%(id)s-audio.%(ext)s" '
             + args
             )

@@ -16,7 +16,7 @@ def multi_audio_dl(self, event):
             + cookies
             + ' -a '
             + link
-            + ' -o "'
+            + ' -o \"'
             + directory
             + '/%(title)s-%(id)s-audio.%(ext)s" '
             + args
