@@ -32,7 +32,7 @@ class home_frame ( wx.Frame ):
 		self.vid = wx.Button( self, wx.ID_ANY, u"Single Video", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.vid.SetLabelMarkup( u"Single Video" )
 		self.vid.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.vid.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		self.vid.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
 		self.vid.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 		self.vid.SetMinSize( wx.Size( 200,50 ) )
 
@@ -41,7 +41,7 @@ class home_frame ( wx.Frame ):
 		self.mul_vid = wx.Button( self, wx.ID_ANY, u"Multiple Videos", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.mul_vid.SetLabelMarkup( u"Multiple Videos" )
 		self.mul_vid.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.mul_vid.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		self.mul_vid.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
 		self.mul_vid.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 		self.mul_vid.SetMinSize( wx.Size( 200,50 ) )
 
@@ -50,7 +50,7 @@ class home_frame ( wx.Frame ):
 		self.clip = wx.Button( self, wx.ID_ANY, u"Single Clip", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.clip.SetLabelMarkup( u"Single Clip" )
 		self.clip.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.clip.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		self.clip.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
 		self.clip.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 		self.clip.SetMinSize( wx.Size( 200,50 ) )
 
@@ -59,7 +59,7 @@ class home_frame ( wx.Frame ):
 		self.mul_clip = wx.Button( self, wx.ID_ANY, u"Multiple Clips", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.mul_clip.SetLabelMarkup( u"Multiple Clips" )
 		self.mul_clip.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.mul_clip.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		self.mul_clip.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
 		self.mul_clip.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 		self.mul_clip.SetMinSize( wx.Size( 200,50 ) )
 
@@ -68,7 +68,7 @@ class home_frame ( wx.Frame ):
 		self.aud = wx.Button( self, wx.ID_ANY, u"Single Audio", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.aud.SetLabelMarkup( u"Single Audio" )
 		self.aud.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.aud.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		self.aud.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
 		self.aud.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 		self.aud.SetMinSize( wx.Size( 200,50 ) )
 
@@ -77,7 +77,7 @@ class home_frame ( wx.Frame ):
 		self.mul_aud = wx.Button( self, wx.ID_ANY, u"Multiple Audio", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.mul_aud.SetLabelMarkup( u"Multiple Audio" )
 		self.mul_aud.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.mul_aud.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		self.mul_aud.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
 		self.mul_aud.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 		self.mul_aud.SetMinSize( wx.Size( 200,50 ) )
 
@@ -143,7 +143,7 @@ class vid_frame ( wx.Frame ):
 		self.vid_sizer.Wrap( -1 )
 
 		self.vid_sizer.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_SEMIBOLD, False, "Quicksand SemiBold" ) )
-		self.vid_sizer.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		self.vid_sizer.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer2.Add( self.vid_sizer, wx.GBPosition( 0, 0 ), wx.GBSpan( 1, 2 ), wx.EXPAND|wx.ALL, 10 )
 
@@ -151,7 +151,7 @@ class vid_frame ( wx.Frame ):
 		self.vid_link_label.Wrap( -1 )
 
 		self.vid_link_label.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.vid_link_label.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		self.vid_link_label.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer2.Add( self.vid_link_label, wx.GBPosition( 1, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_VERTICAL, 5 )
 
@@ -164,7 +164,7 @@ class vid_frame ( wx.Frame ):
 		self.m_staticText6.Wrap( -1 )
 
 		self.m_staticText6.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText6.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		self.m_staticText6.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer2.Add( self.m_staticText6, wx.GBPosition( 2, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -179,7 +179,7 @@ class vid_frame ( wx.Frame ):
 		self.m_staticText7.Wrap( -1 )
 
 		self.m_staticText7.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText7.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		self.m_staticText7.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer2.Add( self.m_staticText7, wx.GBPosition( 3, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -191,7 +191,7 @@ class vid_frame ( wx.Frame ):
 
 		self.vid_dl_button = wx.Button( self, wx.ID_ANY, u"Download", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.vid_dl_button.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.vid_dl_button.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		self.vid_dl_button.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 		self.vid_dl_button.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer2.Add( self.vid_dl_button, wx.GBPosition( 6, 0 ), wx.GBSpan( 1, 2 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
@@ -261,7 +261,7 @@ class mul_vid_frame ( wx.Frame ):
 		self.mul_vid_label.Wrap( -1 )
 
 		self.mul_vid_label.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.mul_vid_label.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.mul_vid_label.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.mul_vid_label, wx.GBPosition( 0, 0 ), wx.GBSpan( 1, 3 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 10 )
 
@@ -272,7 +272,7 @@ class mul_vid_frame ( wx.Frame ):
 		self.m_staticText10.Wrap( -1 )
 
 		self.m_staticText10.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText10.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText10.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.m_staticText10, wx.GBPosition( 0, 4 ), wx.GBSpan( 1, 2 ), wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_VERTICAL, 5 )
 
@@ -280,7 +280,7 @@ class mul_vid_frame ( wx.Frame ):
 		self.mul_vid_link_label.Wrap( -1 )
 
 		self.mul_vid_link_label.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.mul_vid_link_label.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.mul_vid_link_label.SetForegroundColour( wx.Colour( 252, 252, 252 ) )
 
 		gbSizer3.Add( self.mul_vid_link_label, wx.GBPosition( 1, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -291,7 +291,7 @@ class mul_vid_frame ( wx.Frame ):
 
 		self.add_link_button = wx.Button( self, wx.ID_ANY, u"Add Link", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.add_link_button.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.add_link_button.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.add_link_button.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 		self.add_link_button.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer3.Add( self.add_link_button, wx.GBPosition( 1, 2 ), wx.GBSpan( 1, 1 ), wx.ALL, 5 )
@@ -307,7 +307,7 @@ class mul_vid_frame ( wx.Frame ):
 		self.m_staticText6.Wrap( -1 )
 
 		self.m_staticText6.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText6.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText6.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.m_staticText6, wx.GBPosition( 2, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -322,7 +322,7 @@ class mul_vid_frame ( wx.Frame ):
 		self.m_staticText7.Wrap( -1 )
 
 		self.m_staticText7.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText7.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText7.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.m_staticText7, wx.GBPosition( 3, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -333,7 +333,7 @@ class mul_vid_frame ( wx.Frame ):
 
 		self.mul_vid_dl_button = wx.Button( self, wx.ID_ANY, u"Download", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.mul_vid_dl_button.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.mul_vid_dl_button.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.mul_vid_dl_button.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 		self.mul_vid_dl_button.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer3.Add( self.mul_vid_dl_button, wx.GBPosition( 6, 0 ), wx.GBSpan( 1, 3 ), wx.ALL|wx.EXPAND, 5 )
@@ -366,14 +366,14 @@ class mul_vid_frame ( wx.Frame ):
 
 		self.m_button10 = wx.Button( self, wx.ID_ANY, u"Clear", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button10.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_button10.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_button10.SetForegroundColour( wx.Colour( 252, 252, 252 ) )
 		self.m_button10.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer3.Add( self.m_button10, wx.GBPosition( 6, 4 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.EXPAND, 5 )
 
 		self.m_button101 = wx.Button( self, wx.ID_ANY, u"Clear All", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button101.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_button101.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_button101.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 		self.m_button101.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer3.Add( self.m_button101, wx.GBPosition( 6, 5 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.EXPAND, 5 )
@@ -425,19 +425,19 @@ class clip_frame ( wx.Frame ):
 		gbSizer2.SetFlexibleDirection( wx.BOTH )
 		gbSizer2.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
 
-		self.vid_sizer = wx.StaticText( self, wx.ID_ANY, u"Clip Download", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.vid_sizer = wx.StaticText( self, wx.ID_ANY, u"Clip Download", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_CENTER_HORIZONTAL )
 		self.vid_sizer.Wrap( -1 )
 
 		self.vid_sizer.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.vid_sizer.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.vid_sizer.SetForegroundColour( wx.Colour( 252, 252, 252 ) )
 
-		gbSizer2.Add( self.vid_sizer, wx.GBPosition( 0, 0 ), wx.GBSpan( 1, 2 ), wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND|wx.ALL, 10 )
+		gbSizer2.Add( self.vid_sizer, wx.GBPosition( 0, 0 ), wx.GBSpan( 1, 2 ), wx.ALIGN_CENTER_VERTICAL|wx.EXPAND|wx.ALL, 10 )
 
 		self.m_staticText19 = wx.StaticText( self, wx.ID_ANY, u"Clip Settings", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_CENTER_HORIZONTAL )
 		self.m_staticText19.Wrap( -1 )
 
 		self.m_staticText19.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText19.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText19.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer2.Add( self.m_staticText19, wx.GBPosition( 0, 3 ), wx.GBSpan( 1, 2 ), wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_VERTICAL, 5 )
 
@@ -445,7 +445,7 @@ class clip_frame ( wx.Frame ):
 		self.vid_link_label.Wrap( -1 )
 
 		self.vid_link_label.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.vid_link_label.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.vid_link_label.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer2.Add( self.vid_link_label, wx.GBPosition( 1, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_VERTICAL, 5 )
 
@@ -461,7 +461,7 @@ class clip_frame ( wx.Frame ):
 		self.m_staticText20.Wrap( -1 )
 
 		self.m_staticText20.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText20.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText20.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer2.Add( self.m_staticText20, wx.GBPosition( 1, 3 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_VERTICAL, 5 )
 
@@ -474,7 +474,7 @@ class clip_frame ( wx.Frame ):
 		self.m_staticText6.Wrap( -1 )
 
 		self.m_staticText6.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText6.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText6.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer2.Add( self.m_staticText6, wx.GBPosition( 2, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -489,11 +489,11 @@ class clip_frame ( wx.Frame ):
 		self.m_staticText21.Wrap( -1 )
 
 		self.m_staticText21.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText21.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText21.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer2.Add( self.m_staticText21, wx.GBPosition( 2, 3 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
-		self.m_timePicker3 = wx.adv.TimePickerCtrl( self, wx.ID_ANY, wx.DefaultDateTime, wx.DefaultPosition, wx.Size( 125,-1 ), wx.adv.TP_DEFAULT )
+		self.m_timePicker3 = wx.adv.TimePickerCtrl( self, wx.ID_ANY, wx.DefaultDateTime, wx.DefaultPosition, wx.Size( 145,-1 ), wx.adv.TP_DEFAULT )
 		self.m_timePicker3.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
 
 		gbSizer2.Add( self.m_timePicker3, wx.GBPosition( 2, 4 ), wx.GBSpan( 1, 1 ), wx.ALL, 5 )
@@ -505,7 +505,7 @@ class clip_frame ( wx.Frame ):
 		self.m_staticText7.Wrap( -1 )
 
 		self.m_staticText7.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText7.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText7.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
 
 		gbSizer2.Add( self.m_staticText7, wx.GBPosition( 4, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -542,7 +542,7 @@ class clip_frame ( wx.Frame ):
 
 		self.vid_dl_button = wx.Button( self, wx.ID_ANY, u"Download", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.vid_dl_button.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.vid_dl_button.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.vid_dl_button.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 		self.vid_dl_button.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer2.Add( self.vid_dl_button, wx.GBPosition( 7, 0 ), wx.GBSpan( 1, 5 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
@@ -587,7 +587,7 @@ class mul_clip_frame ( wx.Frame ):
 		self.mul_vid_label.Wrap( -1 )
 
 		self.mul_vid_label.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.mul_vid_label.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.mul_vid_label.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.mul_vid_label, wx.GBPosition( 0, 0 ), wx.GBSpan( 1, 3 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 10 )
 
@@ -598,7 +598,7 @@ class mul_clip_frame ( wx.Frame ):
 		self.m_staticText10.Wrap( -1 )
 
 		self.m_staticText10.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText10.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText10.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.m_staticText10, wx.GBPosition( 0, 4 ), wx.GBSpan( 1, 2 ), wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_VERTICAL, 5 )
 
@@ -606,7 +606,7 @@ class mul_clip_frame ( wx.Frame ):
 		self.mul_vid_link_label.Wrap( -1 )
 
 		self.mul_vid_link_label.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.mul_vid_link_label.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.mul_vid_link_label.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.mul_vid_link_label, wx.GBPosition( 1, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -625,7 +625,7 @@ class mul_clip_frame ( wx.Frame ):
 		self.m_staticText6.Wrap( -1 )
 
 		self.m_staticText6.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText6.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText6.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.m_staticText6, wx.GBPosition( 2, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -634,9 +634,9 @@ class mul_clip_frame ( wx.Frame ):
 
 		gbSizer3.Add( self.m_timePicker3, wx.GBPosition( 2, 1 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.EXPAND, 5 )
 
-		self.m_button18 = wx.Button( self, wx.ID_ANY, u"Add Clip", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button18 = wx.Button( self, wx.ID_ANY, u"Add Clip", wx.DefaultPosition, wx.Size( 120,-1 ), 0 )
 		self.m_button18.SetFont( wx.Font( 17, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_button18.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_button18.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 		self.m_button18.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer3.Add( self.m_button18, wx.GBPosition( 2, 2 ), wx.GBSpan( 2, 1 ), wx.ALL|wx.EXPAND, 5 )
@@ -645,7 +645,7 @@ class mul_clip_frame ( wx.Frame ):
 		self.m_staticText28.Wrap( -1 )
 
 		self.m_staticText28.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText28.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText28.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.m_staticText28, wx.GBPosition( 3, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -658,7 +658,7 @@ class mul_clip_frame ( wx.Frame ):
 		self.m_staticText7.Wrap( -1 )
 
 		self.m_staticText7.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText7.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText7.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.m_staticText7, wx.GBPosition( 4, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -695,14 +695,14 @@ class mul_clip_frame ( wx.Frame ):
 
 		self.mul_vid_dl_button = wx.Button( self, wx.ID_ANY, u"Download", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.mul_vid_dl_button.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.mul_vid_dl_button.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.mul_vid_dl_button.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 		self.mul_vid_dl_button.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer3.Add( self.mul_vid_dl_button, wx.GBPosition( 7, 0 ), wx.GBSpan( 1, 3 ), wx.ALL|wx.EXPAND, 5 )
 
 		self.m_button10 = wx.Button( self, wx.ID_ANY, u"Clear", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button10.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_button10.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_button10.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 		self.m_button10.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer3.Add( self.m_button10, wx.GBPosition( 7, 4 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.EXPAND, 5 )
@@ -765,7 +765,7 @@ class aud_frame ( wx.Frame ):
 		self.m_staticText31.Wrap( -1 )
 
 		self.m_staticText31.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText31.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText31.SetForegroundColour( wx.Colour( 252, 252, 252 ) )
 
 		gbSizer6.Add( self.m_staticText31, wx.GBPosition( 0, 0 ), wx.GBSpan( 1, 2 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -773,7 +773,7 @@ class aud_frame ( wx.Frame ):
 		self.m_staticText32.Wrap( -1 )
 
 		self.m_staticText32.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText32.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText32.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer6.Add( self.m_staticText32, wx.GBPosition( 1, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -793,7 +793,7 @@ class aud_frame ( wx.Frame ):
 		self.m_staticText39.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
 		self.m_staticText39.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
 
-		gbSizer6.Add( self.m_staticText39, wx.GBPosition( 3, 0 ), wx.GBSpan( 1, 1 ), wx.ALL, 5 )
+		gbSizer6.Add( self.m_staticText39, wx.GBPosition( 3, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.cookie_picker = wx.FilePickerCtrl( self, wx.ID_ANY, wx.EmptyString, u"Select a file", u"*.*", wx.DefaultPosition, wx.DefaultSize, wx.FLP_DEFAULT_STYLE )
 		self.cookie_picker.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
@@ -806,7 +806,7 @@ class aud_frame ( wx.Frame ):
 		self.m_staticText40.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
 		self.m_staticText40.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
 
-		gbSizer6.Add( self.m_staticText40, wx.GBPosition( 4, 0 ), wx.GBSpan( 1, 1 ), wx.ALL, 5 )
+		gbSizer6.Add( self.m_staticText40, wx.GBPosition( 4, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
 		self.custom_args = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.custom_args.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
@@ -817,13 +817,13 @@ class aud_frame ( wx.Frame ):
 		self.m_staticText33.Wrap( -1 )
 
 		self.m_staticText33.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText33.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText33.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer6.Add( self.m_staticText33, wx.GBPosition( 2, 0 ), wx.GBSpan( 1, 1 ), wx.ALL, 5 )
 
 		self.m_button18 = wx.Button( self, wx.ID_ANY, u"Download", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button18.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_button18.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_button18.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 		self.m_button18.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer6.Add( self.m_button18, wx.GBPosition( 5, 0 ), wx.GBSpan( 1, 2 ), wx.ALL|wx.EXPAND, 5 )
@@ -867,7 +867,7 @@ class mul_aud_frame ( wx.Frame ):
 		self.mul_vid_label.Wrap( -1 )
 
 		self.mul_vid_label.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.mul_vid_label.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.mul_vid_label.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.mul_vid_label, wx.GBPosition( 0, 0 ), wx.GBSpan( 1, 3 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 10 )
 
@@ -878,7 +878,7 @@ class mul_aud_frame ( wx.Frame ):
 		self.m_staticText10.Wrap( -1 )
 
 		self.m_staticText10.SetFont( wx.Font( 13, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText10.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText10.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.m_staticText10, wx.GBPosition( 0, 4 ), wx.GBSpan( 1, 2 ), wx.ALL|wx.EXPAND|wx.ALIGN_CENTER_VERTICAL, 5 )
 
@@ -886,7 +886,7 @@ class mul_aud_frame ( wx.Frame ):
 		self.mul_vid_link_label.Wrap( -1 )
 
 		self.mul_vid_link_label.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.mul_vid_link_label.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.mul_vid_link_label.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.mul_vid_link_label, wx.GBPosition( 1, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -897,7 +897,7 @@ class mul_aud_frame ( wx.Frame ):
 
 		self.add_link_button = wx.Button( self, wx.ID_ANY, u"Add Link", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.add_link_button.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.add_link_button.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.add_link_button.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
 		self.add_link_button.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer3.Add( self.add_link_button, wx.GBPosition( 1, 2 ), wx.GBSpan( 1, 1 ), wx.ALL, 5 )
@@ -913,7 +913,7 @@ class mul_aud_frame ( wx.Frame ):
 		self.m_staticText7.Wrap( -1 )
 
 		self.m_staticText7.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_staticText7.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_staticText7.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 
 		gbSizer3.Add( self.m_staticText7, wx.GBPosition( 2, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
@@ -928,7 +928,7 @@ class mul_aud_frame ( wx.Frame ):
 		self.m_staticText41.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
 		self.m_staticText41.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
 
-		gbSizer3.Add( self.m_staticText41, wx.GBPosition( 3, 0 ), wx.GBSpan( 1, 1 ), wx.ALL, 5 )
+		gbSizer3.Add( self.m_staticText41, wx.GBPosition( 3, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
 		self.cookie_picker = wx.FilePickerCtrl( self, wx.ID_ANY, wx.EmptyString, u"Select a file", u"*.*", wx.DefaultPosition, wx.DefaultSize, wx.FLP_DEFAULT_STYLE )
 		gbSizer3.Add( self.cookie_picker, wx.GBPosition( 3, 1 ), wx.GBSpan( 1, 2 ), wx.ALL|wx.EXPAND, 5 )
@@ -939,21 +939,21 @@ class mul_aud_frame ( wx.Frame ):
 		self.m_staticText42.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
 		self.m_staticText42.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
 
-		gbSizer3.Add( self.m_staticText42, wx.GBPosition( 4, 0 ), wx.GBSpan( 1, 1 ), wx.ALL, 5 )
+		gbSizer3.Add( self.m_staticText42, wx.GBPosition( 4, 0 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
 		self.custom_args = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		gbSizer3.Add( self.custom_args, wx.GBPosition( 4, 1 ), wx.GBSpan( 1, 2 ), wx.ALL|wx.EXPAND, 5 )
 
 		self.mul_vid_dl_button = wx.Button( self, wx.ID_ANY, u"Download", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.mul_vid_dl_button.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.mul_vid_dl_button.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.mul_vid_dl_button.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 		self.mul_vid_dl_button.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer3.Add( self.mul_vid_dl_button, wx.GBPosition( 5, 0 ), wx.GBSpan( 1, 3 ), wx.ALL|wx.EXPAND, 5 )
 
 		self.m_button10 = wx.Button( self, wx.ID_ANY, u"Clear", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button10.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
-		self.m_button10.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.m_button10.SetForegroundColour( wx.Colour( 239, 240, 241 ) )
 		self.m_button10.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
 
 		gbSizer3.Add( self.m_button10, wx.GBPosition( 5, 4 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.EXPAND, 5 )
