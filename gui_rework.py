@@ -23,7 +23,8 @@ import multi_audio_dl
 IS_WINDOWS = platform.system() == "Windows"
 IS_LINUX = platform.system() == "Linux"
 
-HOME = Path().home() / Path("Videos")
+HOMEVID = Path().home() / Path("Videos")
+HOMEAUD = Path().home() / Path("Music")
 
 cookie_path = os.path.join('multi_download_files', 'default_cookies.txt')
 
@@ -75,6 +76,7 @@ class vid(noname.vid_frame):
     def __init__(self, parent):
         noname.vid_frame.__init__(self, parent)
         self.cookie_picker.SetPath(cookie_path)
+        self.m_dirPicker1.SetPath(str(HOMEVID))        
     
     def vid_dl(self, event):
         video_dl.video_dl(self, event)
@@ -84,9 +86,7 @@ class mul_vid(noname.mul_vid_frame):
         noname.mul_vid_frame.__init__(self, parent)
         add_link.clear_all_links_func(self, 0)
         self.cookie_picker.SetPath(cookie_path)
-        if IS_WINDOWS:
-            text_ctr: wx.TextCtrl = self.m_dirPicker1.GetTextCtrl()
-            text_ctr.AppendText(str(HOME))
+        self.m_dirPicker1.SetPath(str(HOMEVID))
 
     def add_link_func(self, event):
         add_link.append_link(self, event)
@@ -105,9 +105,7 @@ class clip(noname.clip_frame):
     def __init__(self, parent):
         noname.clip_frame.__init__(self, parent)
         self.cookie_picker.SetPath(cookie_path)
-        if IS_WINDOWS:
-            text_ctr: wx.TextCtrl = self.m_dirPicker1.GetTextCtrl()
-            text_ctr.AppendText(str(HOME))
+        self.m_dirPicker1.SetPath(str(HOMEVID))
         self.m_timePicker2.SetTime(0, 0, 0)
         self.m_timePicker3.SetTime(0, 0, 0)
 
@@ -119,9 +117,7 @@ class multi_clip(noname.mul_clip_frame):
         noname.mul_clip_frame.__init__(self, parent)
         add_clip.clear_all_links_func(self, 0)
         self.cookie_picker.SetPath(cookie_path)
-        if IS_WINDOWS:
-            text_ctr: wx.TextCtrl = self.m_dirPicker1.GetTextCtrl()
-            text_ctr.AppendText(str(HOME))
+        self.m_dirPicker1.SetPath(str(HOMEVID))
         self.m_timePicker3.SetTime(0, 0, 0)
         self.m_timePicker4.SetTime(0, 0, 0)
 
@@ -141,9 +137,7 @@ class single_audio(noname.aud_frame):
     def __init__(self, parent):
         noname.aud_frame.__init__(self, parent)
         self.cookie_picker.SetPath(cookie_path)
-        if IS_WINDOWS:
-            text_ctr: wx.TextCtrl = self.m_dirPicker5.GetTextCtrl()
-            text_ctr.AppendText(str(HOME))
+        self.m_dirPicker5.SetPath(str(HOMEAUD))
 
     def audio_dl(self, event):
         audio_dl.audio_dl_func(self, event)
@@ -153,9 +147,7 @@ class multi_audio(noname.mul_aud_frame):
         noname.mul_aud_frame.__init__(self, parent)
         add_link.clear_all_links_func(self, 0)
         self.cookie_picker.SetPath(cookie_path)
-        if IS_WINDOWS:
-            text_ctr: wx.TextCtrl = self.m_dirPicker1.GetTextCtrl()
-            text_ctr.AppendText(str(HOME))
+        self.m_dirPicker1.SetPath(str(HOMEAUD))
     
     def add_link_func(self, event):
         add_link.append_link(self, event)

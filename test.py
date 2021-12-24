@@ -1,11 +1,6 @@
-test = open('multi_clip.txt', 'r')
-counter = 0
+from os import path
+from pathlib import Path
 
-content = test.read()
-content_list = content.split("\n")
+HOME = Path().home() / Path("Videos")
 
-for i in content_list:
-    if i:
-        counter += 1
-
-print(counter)
+print(HOME)
