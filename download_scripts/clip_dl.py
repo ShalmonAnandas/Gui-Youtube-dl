@@ -11,13 +11,13 @@ def clip_dl_func(self, event):
     cookies: str = self.cookie_picker.GetPath()
     args: str =  self.custom_args.GetValue()
 
-    startTimeRaw = str(self.m_timePicker2.GetValue()).split(" ")[1]
+    startTimeRaw = str(self.m_timePicker2.GetValue()).split(" ")[4]
     print(startTimeRaw)
     hours, minutes, seconds = startTimeRaw.split(":", maxsplit=2)
     startTime = (int(hours) * 60 * 60) + (int(minutes) * 60) + int(seconds)
 
 
-    endTimeRaw = str(self.m_timePicker3.GetValue()).split(" ")[1]
+    endTimeRaw = str(self.m_timePicker3.GetValue()).split(" ")[4]
     print(endTimeRaw)
     hours, minutes, seconds = endTimeRaw.split(":", maxsplit=2)
     endTime = (int(hours) * 60 * 60) + (int(minutes) * 60) + int(seconds)

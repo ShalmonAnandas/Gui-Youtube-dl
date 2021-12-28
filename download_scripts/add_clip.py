@@ -9,11 +9,11 @@ multi_clip = os.path.join('multi_download_files', 'multi_clip.txt')
 
 def append_link(self, event):
     link = self.m_textCtrl2.GetValue()
-    startTimeRaw = str(self.m_timePicker3.GetValue()).split(" ")[1]
+    startTimeRaw = str(self.m_timePicker3.GetValue()).split(" ")[4]
     hours, minutes, seconds = startTimeRaw.split(":", maxsplit=2)
     startTime = (int(hours) * 60 * 60) + (int(minutes) * 60) + int(seconds)
 
-    endTimeRaw = str(self.m_timePicker4.GetValue()).split(" ")[1]
+    endTimeRaw = str(self.m_timePicker4.GetValue()).split(" ")[4]
     hours, minutes, seconds = endTimeRaw.split(":", maxsplit=2)
     endTime = (int(hours) * 60 * 60) + (int(minutes) * 60) + int(seconds)
 
