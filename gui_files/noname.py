@@ -19,7 +19,7 @@ import wx.adv
 class home_frame ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"GUI Youtube-dl", pos = wx.DefaultPosition, size = wx.Size( -1,-1 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"GUI Youtube-dl", pos = wx.DefaultPosition, size = wx.Size( 431,268 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
@@ -83,10 +83,17 @@ class home_frame ( wx.Frame ):
 
 		gbSizer1.Add( self.mul_aud, wx.GBPosition( 2, 1 ), wx.GBSpan( 1, 1 ), wx.ALL|wx.EXPAND, 5 )
 
+		self.update_btn = wx.Button( self, wx.ID_ANY, u"Force Update YT-DLP", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.update_btn.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
+		self.update_btn.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
+		self.update_btn.SetBackgroundColour( wx.Colour( 46, 52, 64 ) )
+		self.update_btn.SetMinSize( wx.Size( 200,50 ) )
+
+		gbSizer1.Add( self.update_btn, wx.GBPosition( 3, 0 ), wx.GBSpan( 1, 2 ), wx.ALL|wx.EXPAND, 5 )
+
 
 		self.SetSizer( gbSizer1 )
 		self.Layout()
-		gbSizer1.Fit( self )
 
 		self.Centre( wx.BOTH )
 
@@ -97,6 +104,7 @@ class home_frame ( wx.Frame ):
 		self.mul_clip.Bind( wx.EVT_BUTTON, self.mul_clip_func )
 		self.aud.Bind( wx.EVT_BUTTON, self.aud_func )
 		self.mul_aud.Bind( wx.EVT_BUTTON, self.mul_aud_func )
+		self.update_btn.Bind( wx.EVT_BUTTON, self.update_yt_dlp )
 
 	def __del__( self ):
 		pass
@@ -119,6 +127,9 @@ class home_frame ( wx.Frame ):
 		event.Skip()
 
 	def mul_aud_func( self, event ):
+		event.Skip()
+
+	def update_yt_dlp( self, event ):
 		event.Skip()
 
 
@@ -994,5 +1005,35 @@ class mul_aud_frame ( wx.Frame ):
 
 	def clear_all_links( self, event ):
 		event.Skip()
+
+
+###########################################################################
+## Class update_screen
+###########################################################################
+
+class update_screen ( wx.Frame ):
+
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 160,66 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+
+		bSizer1 = wx.BoxSizer( wx.VERTICAL )
+
+		self.update_label = wx.StaticText( self, wx.ID_ANY, u"Updating.....", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.update_label.Wrap( -1 )
+
+		self.update_label.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand SemiBold" ) )
+
+		bSizer1.Add( self.update_label, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+
+		self.SetSizer( bSizer1 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+	def __del__( self ):
+		pass
 
 

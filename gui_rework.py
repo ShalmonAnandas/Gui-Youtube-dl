@@ -5,10 +5,10 @@ from os import path
 from pathlib import Path
 import sys
 
-from wx.core import Panel
 sys.path.insert(1, 'gui_files')
 sys.path.insert(1, 'download_scripts')
 sys.path.insert(1, 'multi_download_files')
+sys.path.insert(1, 'update_script')
 
 import noname
 import video_dl
@@ -19,6 +19,11 @@ import add_clip
 import mul_clip_dl
 import audio_dl
 import multi_audio_dl
+import yt_dlp_update_script
+
+print("Updating yt-dlp......")
+yt_dlp_update_script.Update()
+print("Update Finished!")
 
 IS_WINDOWS = platform.system() == "Windows"
 IS_LINUX = platform.system() == "Linux"
@@ -28,8 +33,8 @@ HOMEAUD = Path().home() / Path("Music")
 
 cookie_path = os.path.join('multi_download_files', 'default_cookies.txt')
 
-
 class MainWindow(noname.home_frame):
+
     def __init__(self, parent):
         noname.home_frame.__init__(self, parent)
 
@@ -76,7 +81,7 @@ class vid(noname.vid_frame):
     def __init__(self, parent):
         noname.vid_frame.__init__(self, parent)
         self.cookie_picker.SetPath(cookie_path)
-        self.m_dirPicker1.SetPath(str(HOMEVID))        
+        self.m_dirPicker1.SetPath(str(HOMEVID))
     
     def vid_dl(self, event):
         video_dl.video_dl(self, event)
@@ -161,8 +166,7 @@ class multi_audio(noname.mul_aud_frame):
 
     def mul_aud_dl(self, event):
         multi_audio_dl.multi_audio_dl(self, event)
-
-
+        
 
 app = wx.App(False)
 frame =  MainWindow(None)
