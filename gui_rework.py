@@ -81,12 +81,13 @@ class MainWindow(noname.home_frame):
         app.MainLoop
 
 class update_screen(noname.update_screen):
+
     def __init__(self, parent):
         noname.update_screen.__init__(self, parent)
         yt_dlp_update_script.Update()
     
     def quit_update(self, event):
-        exit()
+        self.Close()
         
 class vid(noname.vid_frame):
     def __init__(self, parent):
