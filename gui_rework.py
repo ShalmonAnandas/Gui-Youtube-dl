@@ -1,3 +1,4 @@
+from turtle import update
 import wx
 import os
 import platform
@@ -20,10 +21,6 @@ import mul_clip_dl
 import audio_dl
 import multi_audio_dl
 import yt_dlp_update_script
-
-print("Updating yt-dlp......")
-yt_dlp_update_script.Update()
-print("Update Finished!")
 
 IS_WINDOWS = platform.system() == "Windows"
 IS_LINUX = platform.system() == "Linux"
@@ -76,7 +73,21 @@ class MainWindow(noname.home_frame):
         frame = multi_audio(None)
         frame.Show(True)
         app.MainLoop()
+    
+    def update_yt_dlp(self, event):
+        app = wx.App(False)
+        frame = update_screen(None)
+        frame.Show(True)
+        app.MainLoop
 
+class update_screen(noname.update_screen):
+    def __init__(self, parent):
+        noname.update_screen.__init__(self, parent)
+        yt_dlp_update_script.Update()
+    
+    def quit_update(self, event):
+        exit()
+        
 class vid(noname.vid_frame):
     def __init__(self, parent):
         noname.vid_frame.__init__(self, parent)

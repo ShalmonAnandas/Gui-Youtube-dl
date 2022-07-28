@@ -14,6 +14,8 @@ def Update_check():
     
 def Update():
 
+    print("Updating YT-DLP.......")
+
     if(os == "win64"):
         url = 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_x86.exe'
         r = requests.get(url, allow_redirects=True)
@@ -24,3 +26,5 @@ def Update():
         r = requests.get(url, allow_redirects=True)
 
         open('yt-dlp_linux', 'wb').write(r.content)
+    
+    print("Update Complete!!")
