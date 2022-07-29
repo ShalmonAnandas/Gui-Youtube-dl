@@ -87,8 +87,8 @@ class update_screen(noname.update_screen):
         yt_dlp_update_script.Update()
     
     def quit_update(self, event):
-        self.Close()
-        
+        wx.Exit()
+
 class vid(noname.vid_frame):
     def __init__(self, parent):
         noname.vid_frame.__init__(self, parent)

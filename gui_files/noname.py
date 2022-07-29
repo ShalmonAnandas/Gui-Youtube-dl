@@ -19,7 +19,7 @@ import wx.adv
 class home_frame ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"GUI Youtube-dl", pos = wx.DefaultPosition, size = wx.Size( 431,291 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"GUI Youtube-dl", pos = wx.DefaultPosition, size = wx.Size( -1,-1 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
@@ -94,6 +94,7 @@ class home_frame ( wx.Frame ):
 
 		self.SetSizer( gbSizer1 )
 		self.Layout()
+		gbSizer1.Fit( self )
 
 		self.Centre( wx.BOTH )
 
@@ -1030,7 +1031,7 @@ class update_screen ( wx.Frame ):
 
 		bSizer1.Add( self.update_label, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.instructions = wx.StaticText( self, wx.ID_ANY, u"The app will close after updating. Restart the app!", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.instructions = wx.StaticText( self, wx.ID_ANY, u"App will close now. Restart the app!", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.instructions.Wrap( -1 )
 
 		self.instructions.SetFont( wx.Font( 9, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Quicksand" ) )
