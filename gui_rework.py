@@ -22,8 +22,24 @@ import audio_dl
 import multi_audio_dl
 import yt_dlp_update_script
 
-IS_WINDOWS = platform.system() == "Windows"
-IS_LINUX = platform.system() == "Linux"
+# IS_WINDOWS = platform.system() == "Windows"
+# IS_LINUX = platform.system() == "Linux"
+
+exec_exists = False
+
+if(platform.system() == "Windows"):
+    update_status_path = os.path.join('update_script', 'update_status.txt')
+    os.system("yt-dlp.exe -U > " + update_status_path)
+    print(sys.stdout.flush())
+elif(platform.system() == "Linux"):
+    yt_dlp_exec = Path("yt-dlp")
+    exec_exists = yt_dlp_exec.is_file()
+    print(exec_exists)
+
+if(exec_exists == True):
+    print("Executable Exists")
+else:
+    yt_dlp_update_script.Update()
 
 HOMEVID = Path().home() / Path("Videos")
 HOMEAUD = Path().home() / Path("Music")
