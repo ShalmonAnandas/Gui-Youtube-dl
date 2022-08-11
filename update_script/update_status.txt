@@ -1,0 +1,2 @@
+Latest version: 2022.08.08, Current version: 2022.08.08
+yt-dlp is up to date (2022.08.08)
