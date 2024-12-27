@@ -1,19 +1,18 @@
 from yt_dlp import YoutubeDL
 import json
 
-from models.info_model import InfoModel
+from src.models.media_model import MediaModel
 
 
-class TestDownload:
-    def __init__(self):
+class Downloader:
+    def __init__(self, dlFormat: str):
         result = YoutubeDL().extract_info(
             "https://www.youtube.com/watch?v=cgfx2mLSI-A&pp=ygUPbGludXMgdGVjaCB0aXBz",
             download=False,
         )
 
-        model: InfoModel = InfoModel.from_json(
-            json.dumps(YoutubeDL.sanitize_info(result))
-        )
+
+        model: MediaModel = MediaModel(**YoutubeDL.sanitize_info(result))
 
         for format in model.formats:
             if format.format_note != "storyboard" and format.protocol == "m3u8_native":
@@ -22,7 +21,7 @@ class TestDownload:
                 )
 
         ytdlp_opts = {
-            "format": "bestaudio+602",
+            "format": dlFormat,
             "writethumbnail": True,
             "postprocessors": [
                 {
