@@ -11,8 +11,9 @@ from src.models.media_model import MediaModel
 
 
 class ProgressHook:
-    def __init__(self, callback=None):
-        self.callback = callback
+    def __init__(self, progress_frame=None, app=None):
+        self.progress_frame = progress_frame
+        self.app = app
         self.downloaded_bytes = 0
         self.total_bytes = 0
         self.speed = 0
@@ -22,8 +23,8 @@ class ProgressHook:
         self.percent = 0
 
     def __call__(self, d):
-
         if d["status"] == "downloading":
+            self.status = "Downloading..."
             self.downloaded_bytes = d.get("downloaded_bytes", 0)
             self.total_bytes = d.get("total_bytes") or d.get("total_bytes_estimate", 0)
             self.speed = d.get("speed", 0)
@@ -32,22 +33,67 @@ class ProgressHook:
 
             if self.total_bytes > 0:
                 self.percent = (self.downloaded_bytes / self.total_bytes) * 100
+            else:
+                self.percent = 0
 
-            # Invoke the callback with updated progress data
-            if self.callback:
-                self.callback(self)
+            # Direct UI update
+            if self.progress_frame and self.app:
+                self._update_ui_directly()
 
         elif d["status"] == "finished":
             self.status = "Finished downloading, now post-processing..."
+            self.percent = 100
 
-            if self.callback:
-                self.callback(self)
+            if self.progress_frame and self.app:
+                self._update_ui_directly()
 
         elif d["status"] == "error":
             self.status = f"Error: {d.get('error', 'Unknown error')}"
+            self.percent = 0
 
-            if self.callback:
-                self.callback(self)
+            if self.progress_frame and self.app:
+                self._update_ui_directly()
+
+    def _update_ui_directly(self):
+        """Update UI directly from the progress hook"""
+        if not self.progress_frame or not hasattr(self.progress_frame, "progress_bar"):
+            return
+
+        try:
+            # Format display text
+            bytes_text = ""
+            if self.total_bytes > 0:
+                downloaded_mb = self.downloaded_bytes / (1024 * 1024)
+                total_mb = self.total_bytes / (1024 * 1024)
+                bytes_text = f" {downloaded_mb:.1f}/{total_mb:.1f} MB"
+
+            speed_text = f"{self._format_speed(self.speed)}" if self.speed else ""
+            eta_text = f", {self.eta}s remaining" if self.eta else ""
+            status_text = f"{self.status}{bytes_text} {speed_text}{eta_text}"
+
+            # Update UI elements
+            def update():
+                if hasattr(self.progress_frame, "progress_bar"):
+                    self.progress_frame.progress_bar.set(
+                        max(0, min(100, self.percent)) / 100
+                    )
+                if hasattr(self.progress_frame, "status_label"):
+                    self.progress_frame.status_label.configure(text=status_text)
+
+            # Schedule UI update on main thread
+            self.app.after(0, update)
+
+        except Exception:
+            pass
+
+    def _format_speed(self, bytes_per_second):
+        """Format download speed for display"""
+        if bytes_per_second < 1024:
+            return f"{bytes_per_second:.0f} B/s"
+        elif bytes_per_second < 1024**2:
+            return f"{bytes_per_second/1024:.1f} KB/s"
+        else:
+            return f"{bytes_per_second/(1024**2):.1f} MB/s"
 
 
 class Downloader:
@@ -171,11 +217,15 @@ class Downloader:
         destination,
         cookies=None,
         custom_args=None,
-        progress_callback=None,
+        progress_frame=None,
+        app=None,
     ):
         """Prepare yt-dlp options with common settings"""
-        # Create a new progress hook for this download
-        progress_hook = ProgressHook(progress_callback)
+        # Create a new progress hook for this download with direct UI access
+        progress_hook = ProgressHook(progress_frame, app)
+
+        # Clear old hooks and add the new one
+        self.progress_hooks.clear()
         self.progress_hooks.append(progress_hook)
 
         # Base options
@@ -185,6 +235,9 @@ class Downloader:
             "writethumbnail": True,
             "noplaylist": True,
             "progress_hooks": [progress_hook],
+            "noprogress": False,
+            "quiet": True,
+            "no_warnings": True,
             "postprocessors": [
                 {"key": "EmbedThumbnail", "already_have_thumbnail": False},
                 {"key": "FFmpegMetadata"},
@@ -228,6 +281,8 @@ class Downloader:
         # Add cookies if provided
         if cookies and os.path.exists(cookies):
             opts["cookiefile"] = cookies
+        elif cookies:
+            pass  # Cookies file not found, continue without it
 
         # Parse and add any custom arguments
         if custom_args:
@@ -246,7 +301,7 @@ class Downloader:
                 # Merge custom args with default opts
                 opts.update(custom_args_dict)
             except Exception as e:
-                print(f"Error parsing custom args: {e}")
+                pass  # Continue without custom args if parsing fails
 
         return opts
 
@@ -257,11 +312,12 @@ class Downloader:
         destination,
         cookies=None,
         custom_args=None,
-        progress_callback=None,
+        progress_frame=None,
+        app=None,
     ):
         """Download a single video with the specified quality"""
         opts = self._prepare_options(
-            quality, destination, cookies, custom_args, progress_callback
+            quality, destination, cookies, custom_args, progress_frame, app
         )
 
         try:
@@ -278,12 +334,13 @@ class Downloader:
         destination,
         cookies=None,
         custom_args=None,
-        progress_callback=None,
+        progress_frame=None,
+        app=None,
     ):
         """Download audio with the specified quality"""
         # For audio downloads, ensure we have the audio extraction post-processor
         opts = self._prepare_options(
-            quality, destination, cookies, custom_args, progress_callback
+            quality, destination, cookies, custom_args, progress_frame, app
         )
 
         try:
@@ -302,7 +359,8 @@ class Downloader:
         destination,
         cookies=None,
         custom_args=None,
-        progress_callback=None,
+        progress_frame=None,
+        app=None,
     ):
         """Download a clip from a video with specified start and end times"""
         # Convert HH:MM:SS format to seconds
@@ -313,7 +371,7 @@ class Downloader:
             return False, "Invalid time format or end time is before start time"
 
         opts = self._prepare_options(
-            quality, destination, cookies, custom_args, progress_callback
+            quality, destination, cookies, custom_args, progress_frame, app
         )
 
         # Add download range to options
