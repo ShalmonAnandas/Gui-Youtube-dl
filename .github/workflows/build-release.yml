@@ -105,7 +105,7 @@ jobs:
         name: linux-build
     
     - name: Create Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         name: Release v${{ steps.get_version.outputs.VERSION }}
         draft: false
